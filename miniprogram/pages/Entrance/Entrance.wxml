@@ -1,0 +1,42 @@
+<!--pages/userConsole/userConsole.wxml-->
+<view class="container">
+  <view class="list">
+    <view class="list-item" bindtap="testCgi">
+  </view>
+    
+  </view>
+  
+  <view class="LogIn" >
+    <view class="page-section">
+      <button class='button'>
+        <image class='buttonImg' src='../Entrance/njupt.png'></image>
+      </button>
+      <view class="weui-cells__title">输入用户名</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" bindinput="bindUserNameInput" value="{{name_value}}" maxlength="10"/>
+        </view>
+      </view>
+    </view>
+      <view class="page-section">
+        <view class="weui-cells__title">输入密码</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" bindinput="bindPasswordInput" password type="text"/>
+          </view>
+        </view>
+      </view>
+
+    <button class='button1'  bindtap="SignIn">登录</button>
+    <button class='button1'  bindtap="ToRegister">注册</button>   
+
+
+    <!-- <div class="nav">
+      <button class="prev" size="mini" type="default" bindtap="prevStep">上一步</button>
+      <button class="next" size="mini" type="default" bindtap="nextStep" wx:if="{{studntsId}}">下一步</button>
+    </div> -->
+  </view>
+   
+
+
+</view>
