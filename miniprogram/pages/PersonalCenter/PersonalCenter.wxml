@@ -13,11 +13,11 @@
     ></button>
     <view class="userinfo-nickname-wrapper">
 
-      <button class="userinfo-nickname">欢迎回来！{{realname}}</button>
+      <button class="userinfo-nickname" bindtap="hide">欢迎回来！{{realname}}</button>
     </view>
   </view>
 
-  <view class="uploader">
+  <view class="uploader" wx:if="{{person}}">
     <view class="uploader-text" bindtap="doUpload">
       <text>个人简历</text>
     </view>

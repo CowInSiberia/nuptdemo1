@@ -7,7 +7,13 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    person:true
+  },
+  hide:function(){
+this.setData({
+  person:false
+})
   },
   onLoad: function(option) {
     
@@ -19,7 +25,7 @@ Page({
     console.log(app.globalData.User)
 
     wx.setNavigationBarTitle({
-      title: '个人中心'
+      title: '学生个人中心'
     })    
 
     // 获取用户信息

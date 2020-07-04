@@ -11,8 +11,7 @@ Page({
     UserNameValue: '',
     PasswordValue: '',
     isChecked: false,
-
-
+    
 
   },
 
@@ -56,6 +55,7 @@ Page({
       })
     }
   }, 
+  
 
   SignIn:function(){
     var that = this;
@@ -74,12 +74,10 @@ Page({
             RealName1: res.data[0].RealName,
             Password1: res.data[0].Password
           })
+           getApp().globalData.Real= that.data.RealName1
           wx.navigateTo({
             url: '../PersonalCenter/PersonalCenter',
-            success:function(){
-              getApp().globalData.Real= that.data.RealName1
-              
-            }
+            
           })
         }else {
           console.log("密码错误")
