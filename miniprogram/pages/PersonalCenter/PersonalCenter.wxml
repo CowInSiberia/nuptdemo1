@@ -19,13 +19,12 @@
 
   <view class="uploader" wx:if="{{person}}">
     <view class="uploader-text" bindtap="doUpload">
-      <text>个人简历</text>
+      <text>修改资料</text>
     </view>
   </view>
-
   <view class="uploader">
     <view class="uploader-text" bindtap="doUpload">
-      <text>项目大厅</text>
+      <text>个人简历</text>
     </view>
   </view>
   <view class="uploader">

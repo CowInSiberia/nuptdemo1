@@ -57,9 +57,7 @@
 
   <!-- 进入 -->
   <view class="uploader">
-    <navigator url="../Entrance/Entrance" open-type="navigate" class="uploader-text">
-      <text>进入</text>
-    </navigator>
+      <button bindtap="enter" class="uploader-text">进入</button>
   </view>
 
 
