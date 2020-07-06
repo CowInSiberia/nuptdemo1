@@ -1,0 +1,13 @@
+.listItem{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border:1rpx solid silver;
+  padding: 10rpx;
+  background-color: white;
+}
+
+text{
+font-size: 40rpx;
+ flex-grow: 1;
+}

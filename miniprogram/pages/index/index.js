@@ -118,8 +118,8 @@ Page({
   },
   //跳转
   enter:function(){
-    wx.switchTab({
-      url: '../Project/Project'
+    wx.navigateTo({
+      url: '../blank/blank'
     })
   }
 
