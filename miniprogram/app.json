@@ -15,7 +15,9 @@
     "pages/im/room/room",
     "pages/Entrance/Entrance",
     "pages/PersonalCenter/PersonalCenter",
-    "pages/Project/Project"
+    "pages/Project/Project",
+    "pages/blank/blank",
+    "pages/UploadProject/UploadProject"
   ],
   "tabBar": {
     "custom": true,

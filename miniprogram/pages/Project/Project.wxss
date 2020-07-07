@@ -42,3 +42,17 @@
   color: #09BB07;
   white-space: nowrap;
 }
+
+.layer2{
+  margin-top: 3vh;
+  margin-left: 10rpx;
+  margin-right:  10rpx;
+  border-radius: 20rpx;
+  border-style: solid;
+  border-color: #F3F3F3;
+  border-bottom-width:0.02rpx;
+  border-top-width:0.02rpx;
+  border-left-width:0.02rpx;
+  border-right-width:0.02rpx;
+  background-color:white;
+}

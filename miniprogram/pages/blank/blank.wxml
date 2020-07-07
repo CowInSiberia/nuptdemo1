@@ -1,2 +1,5 @@
 <button bindtap="tabbar">tabbar</button>
 
+<button bindtap="entrance">entrance</button>
+
+<button bindtap="uploadproject">uploadproject</button>

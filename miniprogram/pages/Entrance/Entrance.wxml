@@ -1,10 +1,5 @@
 <!--pages/userConsole/userConsole.wxml-->
 <view class="container">
-  <view class="list">
-    <view class="list-item" bindtap="testCgi">
-  </view>
-    
-  </view>
   
   <view class="LogIn" >
     <view class="page-section">

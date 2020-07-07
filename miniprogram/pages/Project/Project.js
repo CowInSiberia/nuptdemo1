@@ -6,7 +6,8 @@ Page({
     openid: '',
     studentsId: '',
     isChecked: false,
-    SearchValue:''
+    SearchValue:'',
+    ProjectNameTemp:[]
   },
   onLoad: function (options) {
     this.setData({
@@ -15,6 +16,9 @@ Page({
     wx.setNavigationBarTitle({
       title: '项目'
     })
+    // this.setData({
+    //   ProjectNameTemp: getApp().globalData.ProjectInfo,
+    // })
   },
   
   searchInput:function(e){
@@ -23,9 +27,9 @@ Page({
 
   show:function(){
     this.setData({
-      // ProjectNameTemp: getApp().globalData.ProjectInfo,
+      ProjectNameTemp: getApp().globalData.ProjectInfo,
     })
-    // console.log(getApp().globalData.ProjectInfo)
+    
     var SearchValue=this.data.SearchValue
 
   },

@@ -24,10 +24,13 @@
   <view>
     <button bindtap="show">数据测试</button>
   </view>
+  <view>
+    <button bindtap="direct">跳转测试</button>
+   </view>
 
-
-  
-
-  <button bindtap="direct">跳转测试</button>
-  
+   <view wx:for="{{ProjectNameTemp}}" wx:for-item="ProjectName">
+    <view class="layer2">
+      <text>{{ProjectName}}</text>    
+    </view>
+   </view>
 
