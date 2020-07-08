@@ -3,48 +3,39 @@ var app = getApp();
 Page({
 
   data:{
-    ProjectName:'',
-    ProfessorName:'',
-    Ability:'',
-    Introduction:''
+    UserNameP:'',
+    Position:''
 
   },
   onLoad:function(){
     wx.setNavigationBarTitle({
-      title: '上传项目'
+      title: '上传信息'
     })
   },
 
-  bindProjectName:function(e){
+  bindUserNameP:function(e){
     this.setData({
-      ProjectName:e.detail.value
+      UserNameP:e.detail.value
     })
   },
 
-  bindProfessorName:function(e){
+  bindPosition:function(e){
     this.setData({
-      ProfessorName:e.detail.value
+      Position:e.detail.value
     })
   },
 
-  bindAbility:function(e){
-    this.setData({
-      Ability:e.detail.value
-    })
-  },
 
   bindFormSubmit: function(e) {
-    this.setData({
-      Introduction:e.detail.value.text
-    })
+    // this.setData({
+    //   Introduction:e.detail.value.text
+    // })
     const db = wx.cloud.database()
-    db.collection('projects').add({
+    db.collection('position').add({
       data: {
        count: 1,
-       ProjectName: this.data.ProjectName,
-       ProfessorName: this.data.ProfessorName,
-       Ability:this.data.Ability,
-       Introduction:this.data.Introduction
+       UserNameP: this.data.UserNameP,
+       Position: this.data.Position
       },
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
@@ -66,8 +57,8 @@ Page({
     })
   },
 
-  test:function(){
-    console.log(this.data.ProjectName)
-  },
+  // test:function(){
+  //   console.log(this.data.ProjectName)
+  // },
 
 })

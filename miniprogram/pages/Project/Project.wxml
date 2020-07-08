@@ -10,16 +10,9 @@
         <view class="weui-search-bar__cancel-btn" bindtap="show">搜索</view>
   </view>
 
-    <view class="uploader">
-      <view class="uploader-text">
-        <text>项目占位1</text>
-      </view>
-    </view>
-    <view class="uploader">
-      <view class="uploader-text">
-        <text>项目占位2</text>
-      </view>
-    </view>
+  <view wx:for="{{ProjectNameTemp}}" wx:for-item="ProjectName" class="uploader">
+    <button class="userinfo-nickname">{{ProjectName}}</button>    
+  </view>
 
   <view>
     <button bindtap="show">数据测试</button>
@@ -28,9 +21,5 @@
     <button bindtap="direct">跳转测试</button>
    </view>
 
-   <view wx:for="{{ProjectNameTemp}}" wx:for-item="ProjectName">
-    <view class="layer2">
-      <text>{{ProjectName}}</text>    
-    </view>
-   </view>
+   
 

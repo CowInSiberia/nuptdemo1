@@ -17,7 +17,9 @@
     "pages/PersonalCenter/PersonalCenter",
     "pages/Project/Project",
     "pages/blank/blank",
-    "pages/UploadProject/UploadProject"
+    "pages/UploadProject/UploadProject",
+    "pages/UploadPosition/UploadPosition",
+    "pages/Register/Register"
   ],
   "tabBar": {
     "custom": true,

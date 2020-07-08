@@ -3,3 +3,15 @@
 <button bindtap="entrance">entrance</button>
 
 <button bindtap="uploadproject">uploadproject</button>
+
+<button bindtap="uploadposition">uploadposition</button>
+
+   <button 
+     open-type="getUserInfo" 
+     bindgetuserinfo="onGetUserInfo"
+     class="userinfo-avatar"
+     style="background-image: url({{avatarUrl}})"
+     size="default"
+   ></button>
+
+   <button class='button1'  bindtap="onGetOpenid">Hello</button>

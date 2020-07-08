@@ -7,18 +7,20 @@ Page({
     studentsId: '',
     isChecked: false,
     SearchValue:'',
-    ProjectNameTemp:[]
+    ProjectNameTemp:[],
+    abc:[]
   },
   onLoad: function (options) {
+    var abc = getApp().globalData.ProjectInfo;
     this.setData({
       openid: getApp().globalData.openid,
+      ProjectNameTemp: abc
     })
     wx.setNavigationBarTitle({
       title: '项目'
     })
-    // this.setData({
-    //   ProjectNameTemp: getApp().globalData.ProjectInfo,
-    // })
+    
+    console.log(this.data.ProjectNameTemp)
   },
   
   searchInput:function(e){
@@ -26,9 +28,9 @@ Page({
   },
 
   show:function(){
-    this.setData({
-      ProjectNameTemp: getApp().globalData.ProjectInfo,
-    })
+    // this.setData({
+    //   ProjectNameTemp: getApp().globalData.ProjectInfo,
+    // })
     
     var SearchValue=this.data.SearchValue
 
