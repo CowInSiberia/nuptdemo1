@@ -27,6 +27,15 @@ Page({
       this.data.SearchValue= e.detail.value;
   },
 
+  display:function(e){
+    app.globalData.projectcurrent=e.currentTarget.id
+    
+    wx.navigateTo({
+      url:"../display/display"
+    })
+
+  },
+
   show:function(){
     // this.setData({
     //   ProjectNameTemp: getApp().globalData.ProjectInfo,

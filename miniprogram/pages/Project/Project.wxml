@@ -11,7 +11,7 @@
   </view>
 
   <view wx:for="{{ProjectNameTemp}}" wx:for-item="ProjectName" class="uploader">
-    <button class="userinfo-nickname">{{ProjectName}}</button>    
+    <button class="userinfo-nickname" bindtap="display" id="{{index}}">{{ProjectName}}</button>    
   </view>
 
   <view>

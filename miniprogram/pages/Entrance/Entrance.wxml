@@ -24,7 +24,7 @@
       
     
     <button class='button1'  bindtap="SignIn">登录</button>
-    <button class='button1'  bindtap="ToRegister">注册</button>   
+    <button class='button1'  bindtap="onAdd">注册</button>   
 
 
     <!-- <div class="nav">

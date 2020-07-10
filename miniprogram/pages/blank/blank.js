@@ -2,8 +2,9 @@ var app = getApp();
 
 Page({
   data:{
-    asd:[],
-    PN:[]
+    projecttemp:[],
+    PN:[],
+    kong:[]
   },
 
   onLoad: function() {
@@ -44,7 +45,7 @@ Page({
 
   onGetOpenid: function() {
     var that = this;
-    var qwe=[]
+    var useropen=[]
     // 调用云函数
     wx.cloud.callFunction({
       name: 'login',
@@ -53,18 +54,20 @@ Page({
         // console.log('[云函数] [login] user openid: ', res.result.openid)
         app.globalData.openid = res.result.openid
         that.setData({
-          qwe:app.globalData.openid
+          useropen:app.globalData.openid
         })
-        // console.log(that.data.qwe)
         const db = wx.cloud.database()
         db.collection('projects').where({
-          _openid: qwe,
+          _openid: useropen,
         })
         .get({
           success: function(res) {
-          // that.setData({
-          //   PositionTemp:res.data[0].position
-          // })
+          if(res.data.length == 0){
+            wx.navigateTo({
+              url: '../Entrance/Entrance',
+            })
+          }
+          
 
           var positionS = ['student']
           var positionP = ['professor']
@@ -76,32 +79,30 @@ Page({
             })
             .get({
               success: function(res) {
-              var asd=[]
+              var projecttemp=[]
+              
               for(var k=0;k<res.data.length;k++){
                 var PN = res.data[k].ProjectName
-                asd.push(PN)
+                projecttemp.push(PN)
 
               }
               that.setData({
-                    asd:asd
+                projecttemp:projecttemp
               })
-              getApp().globalData.ProjectInfo = that.data.asd  
+              getApp().globalData.ProjectInfo = that.data.projecttemp  
 
               wx.switchTab({
               url:"../Project/Project"
               })
             }})
-          }else{
-            console.log("该微信号无权限")
-          }
-
-          if(res.data[0].position == positionP){
+          }else if(res.data[0].position == positionP){
             wx.navigateTo({
               url:"../UploadProject/UploadProject"
             })
           }
 
         }})
+        
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)

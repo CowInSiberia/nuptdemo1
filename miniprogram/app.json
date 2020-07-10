@@ -19,7 +19,8 @@
     "pages/blank/blank",
     "pages/UploadProject/UploadProject",
     "pages/UploadPosition/UploadPosition",
-    "pages/Register/Register"
+    "pages/Register/Register",
+    "pages/display/display"
   ],
   "tabBar": {
     "custom": true,
