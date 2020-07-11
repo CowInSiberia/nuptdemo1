@@ -74,22 +74,21 @@ Page({
           if(res.data[0].position == positionS){
             //载入项目大厅
             const db = wx.cloud.database()
-            db.collection('students').where({
-              pro:false
+            db.collection('projects').where({
+              count:2
             })
             .get({
-              success: function(res) {
-              var projecttemp=[]
-              
-              for(var k=0;k<res.data.length;k++){
-                var PN = res.data[k].ProjectName
-                projecttemp.push(PN)
+              success: function(res) {             
+              // for(var k=0;k<res.data.length;k++){
+              //   var PN = res.data[k].ProjectName
+              //   projecttemp.push(PN)
 
-              }
+              // }
               that.setData({
-                projecttemp:projecttemp
+                projectinfo:res.data
               })
-              getApp().globalData.ProjectInfo = that.data.projecttemp  
+              getApp().globalData.ProjectInfo = that.data.projectinfo  
+              
 
               wx.switchTab({
               url:"../Project/Project"

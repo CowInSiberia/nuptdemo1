@@ -19,6 +19,6 @@ App({
   globalData:{
     Real:'',
     ProjectInfo:[],
-    projectcurrent:[]
+    projectcurrent:0
   }
 })

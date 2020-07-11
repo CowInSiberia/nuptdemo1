@@ -2,15 +2,24 @@ var app = getApp();
 
 Page({
   data:{
-    idtest:[]
-
+    projectid:[],
   },
 
   onLoad: function() {
-    var idtest = getApp().globalData.projectcurrent;
+    var projectid = getApp().globalData.projectcurrent;
+    var test = getApp().globalData.ProjectInfo[projectid];
+    
     this.setData({
-      qwe:idtest
+      ProjectID:projectid,
+      ProjectName:test.ProjectName,
+      ProfessorName:test.ProfessorName,
+      Ability:test.Ability,
+      Introduction:test.Introduction
+
+
     })
+    console.log(this.data.Ability)
+    
     
   },
 })

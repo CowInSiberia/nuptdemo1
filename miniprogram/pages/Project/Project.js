@@ -8,19 +8,23 @@ Page({
     isChecked: false,
     SearchValue:'',
     ProjectNameTemp:[],
-    abc:[]
+    ProjectInformation:[],
   },
   onLoad: function (options) {
-    var abc = getApp().globalData.ProjectInfo;
+    var ProjectInformation = getApp().globalData.ProjectInfo;
+    var projectname = [];
+      for(var k = 0; k < ProjectInformation.length; k++){
+        var PN = ProjectInformation[k].ProjectName
+        projectname.push(PN)
+      }
+
     this.setData({
-      openid: getApp().globalData.openid,
-      ProjectNameTemp: abc
+      ProjectNameTemp: projectname
     })
+    
     wx.setNavigationBarTitle({
       title: '项目'
     })
-    
-    console.log(this.data.ProjectNameTemp)
   },
   
   searchInput:function(e){
@@ -28,7 +32,7 @@ Page({
   },
 
   display:function(e){
-    app.globalData.projectcurrent=e.currentTarget.id
+    app.globalData.projectcurrent = e.currentTarget.id
     
     wx.navigateTo({
       url:"../display/display"

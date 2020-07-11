@@ -1,1 +1,6 @@
-<text>{{qwe}}</text>
+<!-- <text>{{ProjectID}}</text> -->
+<button class="button1">{{ProjectName}}</button>
+<button class="button1">{{ProfessorName}}</button>
+<button class="button1">{{Ability}}</button>
+<button class="button1">{{Introduction}}</button>
+
