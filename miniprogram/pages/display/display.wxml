@@ -1,6 +1,22 @@
 <!-- <text>{{ProjectID}}</text> -->
-<button class="button1">{{ProjectName}}</button>
-<button class="button1">{{ProfessorName}}</button>
-<button class="button1">{{Ability}}</button>
-<button class="button1">{{Introduction}}</button>
+<view class = "indexContext">
 
+  <i-panel title="项目名称">
+    <view style="padding: 15px;">{{ProjectName}}</view>
+  </i-panel>
+
+  <i-panel title="教授/课题组">
+    <view style="padding: 15px;">{{ProfessorName}}</view>
+  </i-panel>
+
+  <i-panel title="能力需求" >
+    <view style="padding: 15px;">{{Ability}}</view>
+  </i-panel>
+
+  <i-panel title="项目介绍">
+    <view style="padding: 15px;">{{Introduction}}</view>
+  </i-panel>
+  
+  <!-- <i-button type="primary" bind:click="handleClick">这是一个按钮</i-button> -->
+
+</view>
