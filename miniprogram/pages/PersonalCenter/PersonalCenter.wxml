@@ -1,9 +1,6 @@
 <view class="container">
 
   <view class="userinfo">
-
-
-
     <button 
       open-type="getUserInfo" 
       bindgetuserinfo="onGetUserInfo"
@@ -13,22 +10,22 @@
     ></button>
     <view class="userinfo-nickname-wrapper">
 
-      <button class="userinfo-nickname" bindtap="hide">欢迎回来！{{realname}}</button>
+      <button class="userinfo-nickname" bindtap="hide">你好! {{realname}}</button>
     </view>
   </view>
 
   <view class="uploader" wx:if="{{person}}">
-    <view class="uploader-text" bindtap="doUpload">
-      <text>修改资料</text>
+    <view class="uploader-text" bindtap="ChangeUserInfo">
+      <text>账户资料</text>
     </view>
   </view>
   <view class="uploader">
-    <view class="uploader-text" bindtap="doUpload">
+    <view class="uploader-text" bindtap="ChangePersonalProfile">
       <text>个人简历</text>
     </view>
   </view>
   <view class="uploader">
-    <view class="uploader-text" bindtap="doUpload">
+    <view class="uploader-text" bindtap="MyProject">
       <text>我的项目</text>
     </view>
   </view>

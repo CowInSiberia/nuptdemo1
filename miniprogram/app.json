@@ -19,7 +19,7 @@
     "pages/blank/blank",
     "pages/UploadProject/UploadProject",
     "pages/UploadPosition/UploadPosition",
-    "pages/Register/Register",
+    "pages/PersonalProfile/PersonalProfile",
     "pages/display/display"
   ],
   "tabBar": {

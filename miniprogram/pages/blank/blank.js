@@ -3,8 +3,7 @@ var app = getApp();
 Page({
   data:{
     projecttemp:[],
-    PN:[],
-    kong:[]
+    PN:[]
   },
 
   onLoad: function() {
@@ -57,23 +56,37 @@ Page({
           useropen:app.globalData.openid
         })
         const db = wx.cloud.database()
-        db.collection('projects').where({
+        db.collection('position').where({
           _openid: useropen,
         })
         .get({
           success: function(res) {
+            
           if(res.data.length == 0){
-            wx.navigateTo({
-              url: '../Entrance/Entrance',
-            })
+            getApp().globalData.currentposition = "tourist"
+            
+            wx.switchTab({
+              url:"../PersonalCenter/PersonalCenter"
+              })
           }
           
-
           var positionS = ['student']
           var positionP = ['professor']
           if(res.data[0].position == positionS){
-            //载入项目大厅
             const db = wx.cloud.database()
+            //载入个人资料
+            db.collection('test1').where({
+              _openid: useropen
+            })
+            .get({
+              success:function(res){
+                // console.log(res.data[0].name)
+                getApp().globalData.currentposition = res.data[0].name
+              }
+            })
+
+
+            //载入项目大厅            
             db.collection('projects').where({
               count:2
             })
@@ -91,13 +104,13 @@ Page({
               
 
               wx.switchTab({
-              url:"../Project/Project"
+              url:"../PersonalCenter/PersonalCenter"
               })
             }})
-          }else if(res.data[0].position == positionP){
-            wx.navigateTo({
-              url:"../UploadProject/UploadProject"
-            })
+          // }else if(res.data[0].position == positionP){
+          //   wx.navigateTo({
+          //     url:"../UploadProject/UploadProject"
+          //   })
           }
 
         }})

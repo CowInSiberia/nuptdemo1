@@ -1,0 +1,25 @@
+/**index.wxss**/
+
+page {
+  background: #f6f6f6;
+  
+}
+
+.picker{
+  padding: 13px;
+  background-color: #FFFFFF;
+}
+
+.button1{
+  
+  width: 80%;
+  margin-top: 80rpx;
+  background-color: burlywood;
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}

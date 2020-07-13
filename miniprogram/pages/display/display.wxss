@@ -5,25 +5,6 @@ page {
   justify-content: flex-start;
 }
 
-.indexContext{
-  /*flex布局  */
-display: flex;
-/*纵向布局  */
-flex-direction: column;
-/*布局居中  */
-align-items: flex-start;
-}
-
-.article-content{
-  color: #666;
-  font-size: 36rpx;
-  margin-bottom: 20rpx;
-  margin-left: 30rpx;
-  line-height: 40rpx;
-  letter-spacing: 2rpx;
-}
-
-
  .divLine{
   background: #E0E3DA;
   width: 100%;

@@ -1,6 +1,4 @@
 <!-- <text>{{ProjectID}}</text> -->
-<view class = "indexContext">
-
   <i-panel title="项目名称">
     <view style="padding: 15px;">{{ProjectName}}</view>
   </i-panel>
@@ -17,6 +15,4 @@
     <view style="padding: 15px;">{{Introduction}}</view>
   </i-panel>
   
-  <!-- <i-button type="primary" bind:click="handleClick">这是一个按钮</i-button> -->
-
-</view>
+  <i-button bind:click="handleClick" type="error" long="true">这是一个按钮</i-button>

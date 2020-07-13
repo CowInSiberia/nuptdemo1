@@ -17,8 +17,10 @@ App({
 
   },
   globalData:{
-    Real:'',
+    Real:'123',
     ProjectInfo:[],
-    projectcurrent:0
+    projectcurrent:0,
+    currentposition:''
+
   }
 })
