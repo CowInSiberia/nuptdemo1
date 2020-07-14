@@ -1,10 +1,86 @@
 Page({
   data: {
     position: ['学生', '教师'],
-
+    // name:'123',
+    qwq:'0',
     college:['计算机、软件、网络空间安全学院','通信与信息工程学院','物联网学院','理学院','外国语学院','海外教育学院'],
-
+    // k1:0
+    formerprofile:false
     
+  },
+
+  onLoad:function(option){
+    wx.setNavigationBarTitle({
+      title: '简历资料'
+    })
+    if(getApp().globalData.profileID=="00"){
+      this.setData({
+        formerprofile:false
+      })
+    }else{
+      this.setData({
+        formerprofile:true
+      })
+    }
+
+    if(this.data.formerprofile){
+      var that = this
+      const db = wx.cloud.database()
+      //调用数据填补placeholder
+      db.collection('PersonalProfile').where({
+        _openid:getApp().globalData.openid
+      })
+      .get({
+        success:function(res){
+          that.setData({
+            usernameA:res.data[0].username,
+            phonenumberA: res.data[0].phonenumber,
+            qqnumberA: res.data[0].qqnumber,
+            positionA: res.data[0].position,
+            collegeA: res.data[0].college,
+            abilityA: res.data[0].ability,
+            selfevaluationA: res.data[0].selfevaluation,
+          })
+          //picker取值
+          if(that.data.positionA=="学生"){
+            that.setData({
+              k1:0
+            })
+          }else if(that.data.positionA=="教师"){
+            that.setData({
+              k1:1
+            })
+          }
+
+          if(that.data.collegeA=="计算机、软件、网络空间安全学院"){
+            that.setData({
+              k2:0
+            })
+          }else if(that.data.collegeA=="通信与信息工程学院"){
+            that.setData({
+              k2:1
+            })
+          }else if(that.data.collegeA=="物联网学院"){
+            that.setData({
+              k2:2
+            })
+          }else if(that.data.collegeA=="理学院"){
+            that.setData({
+              k2:3
+            })
+          }else if(that.data.collegeA=="外国语学院"){
+            that.setData({
+              k2:4
+            })
+          }else if(that.data.collegeA=="海外教育学院"){
+            that.setData({
+              k2:5
+            })
+          }
+        }
+      })
+    }
+
   },
 
   username:function(event){
@@ -56,31 +132,65 @@ Page({
       collegevalue:this.data.college[this.data.k2]
     })
 
+
     const db = wx.cloud.database()
-    db.collection('PersonalProfile').add({
-       data: {
-        username: this.data.username,
-        phonenumber: this.data.phonenumber,
-        qqnumber: this.data.qqnumber,
-        position: this.data.positionvalue,
-        college: this.data.collegevalue,
-        ability: this.data.ability,
-        selfevaluation: this.data.selfevaluation,
-       },
-       success: res => {
-         // 在返回结果中会包含新创建的记录的 _id
-        
-         wx.showToast({
-           title: '已保存',
-         })
-       },
-       fail: err => {
-         wx.showToast({
-          icon: 'none',
-           title: '保存失败'
-         })
-       }
-     })
+    if(this.data.formerprofile){
+      
+
+      //更新数据
+      db.collection('PersonalProfile').doc(getApp().globalData.profileID).update({
+        data: {
+          username: this.data.username,
+          phonenumber: this.data.phonenumber,
+          qqnumber: this.data.qqnumber,
+          position: this.data.positionvalue,
+          college: this.data.collegevalue,
+          ability: this.data.ability,
+          selfevaluation: this.data.selfevaluation,
+        },
+        success: res => {
+          // 在返回结果中会包含新创建的记录的 _id
+          
+          wx.showToast({
+            title: '已保存',
+          })
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '保存失败'
+          })
+        }
+      })
+    }else{
+      db.collection('PersonalProfile').add({
+        data: {
+          username: this.data.username,
+          phonenumber: this.data.phonenumber,
+          qqnumber: this.data.qqnumber,
+          position: this.data.positionvalue,
+          college: this.data.collegevalue,
+          ability: this.data.ability,
+          selfevaluation: this.data.selfevaluation,
+        },
+        success: res => {
+          // 在返回结果中会包含新创建的记录的 _id
+          
+          wx.showToast({
+            title: '已保存',
+          })
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '保存失败'
+          })
+        }
+      })
+
+    }
+    
+      
   },
   
   

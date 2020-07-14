@@ -43,6 +43,26 @@ Page({
           })
         }
       }
+    }),
+    
+    this.setData({
+      useropen:app.globalData.openid
+    })
+    //通过唯一openid连接数据库调取个人简历信息
+    const db = wx.cloud.database()
+    db.collection('PersonalProfile').where({
+      _openid: this.data.useropen,
+    })
+    .get({
+      success:function(res){
+        // console.log(res.data[0].qqnumber)
+        if(res.data.length == 0){
+          getApp().globalData.profileID = "00"
+        }else{
+          getApp().globalData.profileID = res.data[0]._id
+        }
+        // getApp().globalData.PersonalProfile = res.data
+      }
     })
   },
 
@@ -65,6 +85,13 @@ Page({
     wx.navigateTo({
       url: '../PersonalProfile/PersonalProfile',
     })
+  },
+
+  MyProject:function(){
+    wx.navigateTo({
+      url: '../UploadProject/UploadProject',
+    })
+
   }
 
 

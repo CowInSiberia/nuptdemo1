@@ -55,6 +55,7 @@ Page({
         that.setData({
           useropen:app.globalData.openid
         })
+        
         const db = wx.cloud.database()
         db.collection('position').where({
           _openid: useropen,

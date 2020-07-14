@@ -1,12 +1,12 @@
 <i-panel>
-    <i-input  type="text" title="用户"  placeholder="名字" bind:blur="username" maxlength="10" />
-    <i-input  type="number" title="联系电话" placeholder="请输入手机号" bind:blur="phonenumber" maxlength="12" />
-    <i-input  type="number" title="QQ" placeholder="请输入QQ号" bind:blur="qqnumber" maxlength="15" />
+    <i-input  value="{{usernameA}}" placeholder="请输入姓名" type="text" title="用户"   bind:blur="username" maxlength="10" />
+    <i-input  value="{{phonenumberA}}" type="number" title="联系电话" placeholder="请输入手机号" bind:blur="phonenumber" maxlength="12" />
+    <i-input  value="{{qqnumberA}}" type="number" title="QQ" placeholder="请输入QQ号" bind:blur="qqnumber" maxlength="15" />
 </i-panel>
 
 <view class="section">
   <view class="section__title"></view>
-  <picker bindchange="bindPickerChange1" value="{{k1}}" range="{{position}}">
+  <picker bindchange="bindPickerChange1"  range="{{position}}">
     <view class="picker">
       身份：{{position[k1]}}
     </view>
@@ -23,8 +23,8 @@
 </view>
 
 <i-panel>
-  <i-input  type="textarea" title="科研" placeholder="请输入自己掌握技能/研究方向(最多20字)" bind:blur="ability" maxlength="20" />
-  <i-input  type="textarea" title="个人陈述" placeholder="请输入自我评价/简介(最多70字)" bind:blur="selfevaluation" maxlength="70" />
+  <i-input  value="{{abilityA}}" type="textarea" title="科研" placeholder="请输入自己掌握技能/研究方向(最多20字)" bind:blur="ability" maxlength="20" />
+  <i-input  value="{{selfevaluationA}}" type="textarea" title="个人陈述" placeholder="请输入自我评价/简介(最多70字)" bind:change="selfevaluation" maxlength="70" />
 </i-panel>
 
 <button class='button1'  bindtap="SaveIntro" >保存</button>
