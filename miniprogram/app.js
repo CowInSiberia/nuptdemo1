@@ -22,7 +22,8 @@ App({
     projectcurrent:0,
     currentposition:'',
     PersonalProfile:[],
-    profileID:''
+    profileID:'',
+    projectID:''
 
   }
 })

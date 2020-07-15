@@ -16,10 +16,7 @@ Page({
       Ability:test.Ability,
       Introduction:test.Introduction
 
-
     })
-    console.log(this.data.Ability)
-    
     
   },
 })

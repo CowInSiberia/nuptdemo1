@@ -55,15 +55,30 @@ Page({
     })
     .get({
       success:function(res){
-        // console.log(res.data[0].qqnumber)
+        
         if(res.data.length == 0){
           getApp().globalData.profileID = "00"
         }else{
           getApp().globalData.profileID = res.data[0]._id
         }
-        // getApp().globalData.PersonalProfile = res.data
       }
     })
+    //通过唯一openid连接数据库调取项目信息
+    db.collection('ProjectProfile').where({
+      _openid: this.data.useropen,
+    })
+    .get({
+      success:function(res){
+        
+        if(res.data.length == 0){
+          getApp().globalData.projectID = "00"
+        }else{
+          getApp().globalData.projectID = res.data[0]._id
+        }
+      }
+    })
+
+
   },
 
 
