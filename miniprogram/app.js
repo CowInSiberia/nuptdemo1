@@ -19,11 +19,13 @@ App({
   globalData:{
     Real:'123',
     ProjectInfo:[],
-    projectcurrent:0,
+    projectcurrent1:0,
+    projectcurrent2:0,
     currentposition:'',
     PersonalProfile:[],
     profileID:'',
-    projectID:''
+    projectID:'',
+    ProjectProfile:[]
 
   }
 })

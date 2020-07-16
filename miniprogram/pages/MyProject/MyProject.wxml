@@ -1,0 +1,14 @@
+
+  <view wx:for="{{ProjectNameTemp}}" wx:for-item="ProjectName" class="uploader">
+    <view class="uploader-text" bindtap="Revise" id="{{index}}">
+      <text>{{ProjectName}}</text>
+    </view>    
+  </view>
+
+  <view>
+    <button bindtap="Upload">上传</button>
+  </view>
+
+
+   
+

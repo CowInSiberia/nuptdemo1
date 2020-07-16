@@ -44,75 +44,49 @@ Page({
 
   onGetOpenid: function() {
     var that = this;
-    var useropen=[]
+    
     // 调用云函数
     wx.cloud.callFunction({
       name: 'login',
       data: {},
       success: res => {
-        // console.log('[云函数] [login] user openid: ', res.result.openid)
         app.globalData.openid = res.result.openid
         that.setData({
           useropen:app.globalData.openid
         })
+       
         
         const db = wx.cloud.database()
-        db.collection('position').where({
-          _openid: useropen,
+        db.collection('PersonalProfile').where({
+          _openid: that.data.useropen,
         })
         .get({
           success: function(res) {
-            
+           
           if(res.data.length == 0){
             getApp().globalData.currentposition = "tourist"
-            
-            wx.switchTab({
-              url:"../PersonalCenter/PersonalCenter"
-              })
+          }else{
+            getApp().globalData.currentposition = res.data[0].username
           }
           
-          var positionS = ['student']
-          var positionP = ['professor']
-          if(res.data[0].position == positionS){
-            const db = wx.cloud.database()
-            //载入个人资料
-            db.collection('test1').where({
-              _openid: useropen
-            })
-            .get({
-              success:function(res){
-                // console.log(res.data[0].name)
-                getApp().globalData.currentposition = res.data[0].name
-              }
-            })
-
-
             //载入项目大厅            
-            db.collection('projects').where({
-              count:2
+            db.collection('ProjectProfile').where({
+              status:"1"
             })
             .get({
               success: function(res) {             
-              // for(var k=0;k<res.data.length;k++){
-              //   var PN = res.data[k].ProjectName
-              //   projecttemp.push(PN)
-
-              // }
+               
               that.setData({
                 projectinfo:res.data
               })
               getApp().globalData.ProjectInfo = that.data.projectinfo  
-              
 
               wx.switchTab({
               url:"../PersonalCenter/PersonalCenter"
               })
             }})
-          // }else if(res.data[0].position == positionP){
-          //   wx.navigateTo({
-          //     url:"../UploadProject/UploadProject"
-          //   })
-          }
+          
+          
 
         }})
         
@@ -123,51 +97,51 @@ Page({
     })
   },
   
-  tabbar:function(){
-    var that = this;
-    const db = wx.cloud.database()
-    db.collection('students').where({
-      pro:false
-    })
-    .get({
-      success: function(res) {
-      var asd=[]
-      for(var k=0;k<res.data.length;k++){
-        var PN = res.data[k].ProjectName
-        asd.push(PN)
+  // tabbar:function(){
+  //   var that = this;
+  //   const db = wx.cloud.database()
+  //   db.collection('students').where({
+  //     pro:false
+  //   })
+  //   .get({
+  //     success: function(res) {
+  //     var asd=[]
+  //     for(var k=0;k<res.data.length;k++){
+  //       var PN = res.data[k].ProjectName
+  //       asd.push(PN)
 
-      }
-       that.setData({
-            asd:asd
-          })
-        console.log(asd)
+  //     }
+  //      that.setData({
+  //           asd:asd
+  //         })
+  //       console.log(asd)
         
-        getApp().globalData.ProjectInfo = that.data.asd  
-        wx.switchTab({
-        url: '../Project/Project',
-        })
-        // getApp().globalData.ProjectInfo = res.data
-    }})
+  //       getApp().globalData.ProjectInfo = that.data.asd  
+  //       wx.switchTab({
+  //       url: '../Project/Project',
+  //       })
+  //       // getApp().globalData.ProjectInfo = res.data
+  //   }})
 
     
   
-  },
+  // },
 
-  entrance:function(){
-    wx.navigateTo({
-      url:'../Entrance/Entrance'
-    })
-  },
+  // entrance:function(){
+  //   wx.navigateTo({
+  //     url:'../Entrance/Entrance'
+  //   })
+  // },
 
-  uploadproject:function(){
-    wx.navigateTo({
-      url:'../UploadProject/UploadProject'
-    })
-  },
+  // uploadproject:function(){
+  //   wx.navigateTo({
+  //     url:'../UploadProject/UploadProject'
+  //   })
+  // },
 
-  uploadposition:function(){
-    wx.navigateTo({
-      url:'../UploadPosition/UploadPosition'
-    })
-  }
+  // uploadposition:function(){
+  //   wx.navigateTo({
+  //     url:'../UploadPosition/UploadPosition'
+  //   })
+  // }
 })

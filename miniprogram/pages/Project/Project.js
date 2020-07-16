@@ -32,7 +32,7 @@ Page({
   },
 
   display:function(e){
-    app.globalData.projectcurrent = e.currentTarget.id
+    app.globalData.projectcurrent1 = e.currentTarget.id
     
     wx.navigateTo({
       url:"../display/display"

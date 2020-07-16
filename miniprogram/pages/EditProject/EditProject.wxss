@@ -1,15 +1,19 @@
+/**index.wxss**/
+
 page {
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  background: #f6f6f6;
+  
+}
+
+.picker{
+  padding: 13px;
+  background-color: #FFFFFF;
 }
 
 .button1{
   
   width: 80%;
-  margin-top: 50rpx;
-  margin-bottom: 50rpx;
+  margin-top: 80rpx;
   background-color: burlywood;
   color: white;
   border-radius: 98rpx;

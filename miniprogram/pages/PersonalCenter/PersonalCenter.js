@@ -63,19 +63,23 @@ Page({
         }
       }
     })
-    //通过唯一openid连接数据库调取项目信息
+
+
+    var that = this;
     db.collection('ProjectProfile').where({
-      _openid: this.data.useropen,
+      // _openid: this.data.useropen,
+      status:"1"
     })
     .get({
       success:function(res){
+        that.setData({
+          projectprofile:res.data
+        })
+
+        getApp().globalData.ProjectProfile = that.data.projectprofile
         
-        if(res.data.length == 0){
-          getApp().globalData.projectID = "00"
-        }else{
-          getApp().globalData.projectID = res.data[0]._id
-        }
       }
+      
     })
 
 
@@ -104,7 +108,7 @@ Page({
 
   MyProject:function(){
     wx.navigateTo({
-      url: '../UploadProject/UploadProject',
+      url: '../MyProject/MyProject',
     })
 
   }

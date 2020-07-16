@@ -20,9 +20,6 @@
   <view>
     <button bindtap="show">数据测试</button>
   </view>
-  <view>
-    <button bindtap="direct">跳转测试</button>
-   </view>
 
 
    

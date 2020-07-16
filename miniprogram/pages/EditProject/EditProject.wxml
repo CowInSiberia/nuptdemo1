@@ -1,0 +1,23 @@
+<i-panel>
+    <i-input  value="{{ProjectNameA}}" placeholder="请输入项目名" type="text" title="项目名称"   bind:blur="ProjectName" maxlength="20" />
+    <i-input  value="{{EmailNumberA}}" type="number" title="联系邮箱" placeholder="请输入邮箱" bind:blur="EmailNumber" maxlength="25" />
+    <i-input  value="{{ProfessorNameA}}" type="text" title="导师/课题组" placeholder="请输入导师姓名" bind:blur="ProfessorName" maxlength="12" />
+</i-panel>
+
+<view class="section">
+  <view class="section__title"></view>
+  <picker bindchange="bindPickerChange4"  range="{{college}}">
+    <view class="picker">
+      学院选择：{{college[k4]}}
+    </view>
+  </picker>
+</view>
+
+<i-panel>
+  <i-input  value="{{DirectionA}}" type="textarea" title="科研方向" placeholder="请输入项目方向(最多20字)" bind:blur="Direction" maxlength="20" />
+  <i-input  value="{{RequirementA}}" type="textarea" title="招募要求" placeholder="请输入申请要求(最多50字)" bind:blur="Requirement" maxlength="50" />
+  <i-input  value="{{ProjectIntroductionA}}" type="textarea" title="项目简介" placeholder="请输入项目简介(最多100字)" bind:change="ProjectIntroduction" maxlength="100" />
+</i-panel>
+
+<button class='button1'  bindtap="SaveProject" >保存</button>
+

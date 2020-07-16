@@ -1,15 +1,52 @@
+var app = getApp();
+
 Page({
-  data: {
+  data:{
     college:['计算机、软件、网络空间安全学院','通信与信息工程学院','物联网学院','理学院','外国语学院','海外教育学院'],
-      
+    projectid:[]
   },
 
-  onLoad:function(option){
-    wx.setNavigationBarTitle({
-      title: '项目资料'
-    })
-    
+  onLoad: function() {
+    var projectid = getApp().globalData.projectcurrent2;
+    var thisproject = getApp().globalData.ProjectInfo[projectid];
 
+    this.setData({
+      ProjectNameA:thisproject.ProjectName,
+      EmailNumberA: thisproject.EmailNumber,
+      ProfessorNameA: thisproject.ProfessorName,
+      CollegeA: thisproject.College,
+      DirectionA: thisproject.Direction,
+      RequirementA: thisproject.Requirement,
+      ProjectIntroductionA: thisproject.ProjectIntroduction,
+      projectid2:thisproject._id
+    })
+
+    if(this.data.CollegeA=="计算机、软件、网络空间安全学院"){
+      this.setData({
+        k4:0
+      })
+    }else if(this.data.CollegeA=="通信与信息工程学院"){
+      this.setData({
+        k4:1
+      })
+    }else if(this.data.CollegeA=="物联网学院"){
+      this.setData({
+        k4:2
+      })
+    }else if(this.data.CollegeA=="理学院"){
+      this.setData({
+        k4:3
+      })
+    }else if(this.data.CollegeA=="外国语学院"){
+      this.setData({
+        k4:4
+      })
+    }else if(this.data.CollegeA=="海外教育学院"){
+      this.setData({
+        k4:5
+      })
+    }
+    
   },
 
   ProjectName:function(event){
@@ -32,7 +69,7 @@ Page({
 
   bindPickerChange3: function (e) {
     this.setData({
-      k3: e.detail.value,
+      k4: e.detail.value,
     })
   },
 
@@ -55,9 +92,9 @@ Page({
     })
   },
 
-  UploadProject:function(){
+  SaveProject:function(){
     this.setData({
-      CollegeValue:this.data.college[this.data.k3]
+      CollegeValue:this.data.college[this.data.k4]
     })
     
     if(this.data.ProjectName == null){
@@ -97,7 +134,8 @@ Page({
       })
     }else{
       const db = wx.cloud.database()
-      db.collection('ProjectProfile').add({
+      //更新数据
+      db.collection('ProjectProfile').doc(this.data.projectid2).update({
         data: {
           ProjectName: this.data.ProjectName,
           EmailNumber: this.data.EmailNumber,
@@ -122,16 +160,10 @@ Page({
           })
         }
       })
-
       
-
-    }
-
-    
-    
-      
+    } 
   },
-  
-  
 
-});
+
+
+})

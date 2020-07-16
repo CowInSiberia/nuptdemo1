@@ -14,11 +14,11 @@
     </view>
   </view>
 
-  <view class="uploader" wx:if="{{person}}">
+  <!-- <view class="uploader" wx:if="{{person}}">
     <view class="uploader-text" bindtap="ChangeUserInfo">
       <text>账户资料</text>
     </view>
-  </view>
+  </view> -->
   <view class="uploader">
     <view class="uploader-text" bindtap="ChangePersonalProfile">
       <text>个人简历</text>
