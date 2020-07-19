@@ -107,9 +107,27 @@ Page({
   },
 
   MyProject:function(){
-    wx.navigateTo({
-      url: '../MyProject/MyProject',
+    const db = wx.cloud.database()
+    db.collection('PersonalProfile').where({
+      _openid: this.data.useropen,
     })
+    .get({
+      success:function(res){
+        
+        if(res.data.length == 0){
+          wx.showToast({
+            icon: 'none',
+            title: '请先填写个人简历，审核成功后方可进入'
+          })
+        }else{
+          wx.navigateTo({
+            url: '../MyProject/MyProject',
+          })
+          
+        }
+      }
+    })
+    
 
   }
 
