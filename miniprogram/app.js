@@ -17,15 +17,14 @@ App({
 
   },
   globalData:{
-    Real:'123',
-    ProjectInfo:[],
+    ProjectInfo:[],              //获取项目内容传递到项目大厅
     projectcurrent1:0,
     projectcurrent2:0,
-    currentposition:'',
-    PersonalProfile:[],
-    profileID:'',
+    currentposition:'',          //标记游客与已填写简历用户姓名
+    PersonalProfile:[],          //获取openid绑定信息传递到个人中心
+    profileID:'',                //根据openid查询当前微信用户是否在用户数据库内有记录，有则传递条目id无则标记为00
     projectID:'',
-    ProjectProfile:[]
+    ProjectProfile:[]            //根据openid查询当前微信用户是否在项目数据库内有记录，有则传递条目id无则标记00
 
   }
 })

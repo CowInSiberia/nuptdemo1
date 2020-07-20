@@ -55,9 +55,23 @@
     </navigator>
   </view>
 
+  <view class="uploader">
+    <view class="uploader-text" bindtap="UploadFile">
+      <text>上传文件</text>
+    </view>
+  </view>
+
+  <view class="uploader">
+    <view class="uploader-text" bindtap="print">
+      <text>打印</text>
+    </view>
+  </view>
+
   <!-- 进入 -->
   <view class="uploader">
-      <button bindtap="enter" class="uploader-text">进入</button>
+      <view bindtap="enter" class="uploader-text">
+        <text>进入</text>
+      </view>
   </view>
 
 

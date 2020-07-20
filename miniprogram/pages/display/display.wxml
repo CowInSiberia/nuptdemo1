@@ -1,6 +1,18 @@
 <!-- <text>{{ProjectID}}</text> -->
   <i-panel title="项目名称">
     <view style="padding: 15px;">{{ProjectName}}</view>
+  </i-panel>  
+  
+  <i-panel title="项目方向">
+    <view style="padding: 15px;">{{Direction}}</view>
+  </i-panel>
+
+  <i-panel title="能力需求" >
+    <view style="padding: 15px;">{{Ability}}</view>
+  </i-panel>
+
+  <i-panel title="项目介绍">
+    <view style="padding: 15px;">{{Introduction}}</view>
   </i-panel>
 
   <i-panel title="教授/课题组">
@@ -15,16 +27,6 @@
     <view style="padding: 15px;">{{Email}}</view>
   </i-panel>
 
-  <i-panel title="项目方向">
-    <view style="padding: 15px;">{{Direction}}</view>
-  </i-panel>
 
-  <i-panel title="能力需求" >
-    <view style="padding: 15px;">{{Ability}}</view>
-  </i-panel>
-
-  <i-panel title="项目介绍">
-    <view style="padding: 15px;">{{Introduction}}</view>
-  </i-panel>
   
 <button class='button1'  bindtap="Apply" >申请</button>

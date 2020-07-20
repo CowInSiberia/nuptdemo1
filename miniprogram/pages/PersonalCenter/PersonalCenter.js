@@ -96,9 +96,6 @@ Page({
     }
   },
 
-  ChangeUserInfo:function(){
-    
-  },
 
   ChangePersonalProfile:function(){
     wx.navigateTo({
