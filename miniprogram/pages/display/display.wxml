@@ -28,5 +28,5 @@
   </i-panel>
 
 
-  
+<button class='button1'  bindtap="downloadAppendix" >查看附件</button>
 <button class='button1'  bindtap="Apply" >申请</button>

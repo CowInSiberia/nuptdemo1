@@ -18,10 +18,35 @@ Page({
       Direction:test.Direction,
       Ability:test.Requirement,
       Introduction:test.ProjectIntroduction,
-
-
+      FileID:test.fileID
     })
     
+  },
+  downloadAppendix:function(){
+    wx.showLoading({
+      title: '下载中',
+    })
+    wx.cloud.downloadFile({
+      fileID: "cloud://nupttest-dq432.6e75-nupttest-dq432-1302512127/projectappendix/" + this.data.FileID + ".pdf",
+      success: res => {
+        // get temp file path
+        // console.log(res.tempFilePath)
+        const filePath = res.tempFilePath
+        wx.hideLoading({
+        })
+        wx.openDocument({
+          filePath,
+          success: function (res) {
+            console.log('打开文档成功')
+            
+          }
+        })
+      },
+      fail: err => {
+        // handle error
+      }
+    })
+
   },
 
   Apply:function(){
