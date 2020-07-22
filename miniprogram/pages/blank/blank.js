@@ -64,9 +64,11 @@ Page({
           success: function(res) {
            
           if(res.data.length == 0){
-            getApp().globalData.currentposition = "tourist"
+            getApp().globalData.currentname = "游客"
+            getApp().globalData.currentposition = "游客"
           }else{
-            getApp().globalData.currentposition = res.data[0].username
+            getApp().globalData.currentname = res.data[0].username
+            getApp().globalData.currentposition = res.data[0].position
           }
           
             //载入项目大厅            

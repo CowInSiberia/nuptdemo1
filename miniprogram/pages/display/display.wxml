@@ -28,5 +28,11 @@
   </i-panel>
 
 
-<button class='button1'  bindtap="downloadAppendix" >查看附件</button>
-<button class='button1'  bindtap="Apply" >申请</button>
+<button class='button1'  bindtap="downloadAppendix" >
+  <image class = "icon2" src="../../images/icon_appendix.png"></image>
+  <text class="button1-text">查看附件</text>
+</button>
+<button class='button2'  bindtap="Apply" >
+  <image class = "icon2" src="../../images/icon_apply.png"></image>
+  <text class="button1-text">申请加入</text>
+</button>

@@ -6,6 +6,7 @@ Page({
   },
 
   onLoad: function() {
+
     var projectid = getApp().globalData.projectcurrent1;
     var test = getApp().globalData.ProjectInfo[projectid];
     
@@ -18,8 +19,10 @@ Page({
       Direction:test.Direction,
       Ability:test.Requirement,
       Introduction:test.ProjectIntroduction,
-      FileID:test.fileID
+      FileID:test.fileID,
+      UserPosition:getApp().globalData.currentposition
     })
+    
     
   },
   downloadAppendix:function(){
@@ -50,16 +53,32 @@ Page({
   },
 
   Apply:function(){
-    this.setData({
-      useropen:app.globalData.openid
-    })
-    
-    const db = wx.cloud.database()
-    db.collection('ProjectProfile').doc(this.data.ProjectID).update({
-      data:{
-        applyid:this.data.useropen
-      }
+    if(this.data.UserPosition == "游客"){
+      wx.showToast({
+        icon: 'none',
+        title: '游客无法申请项目，请先填写个人简历进行身份申请'
+      })
+    }else if(this.data.UserPosition == "教师"){
+      wx.showToast({
+        icon: 'none',
+        title: '抱歉，教师身份无法申请项目'
+      })
+    }else if(this.data.UserPosition == "学生"){
+      this.setData({
+        useropen:app.globalData.openid
+      })
+      
+      const db = wx.cloud.database()
+      db.collection('ProjectProfile').doc(this.data.ProjectID).update({
+        data:{
+          applyid:this.data.useropen
+        }
+  
+      })
 
-    })
+    }
+
+
+    
   }
 })

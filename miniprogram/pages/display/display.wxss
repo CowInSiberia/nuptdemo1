@@ -7,14 +7,43 @@ page {
 
 .button1{
   
-  width: 80%;
-  margin-top: 50rpx;
-  margin-bottom: 50rpx;
-  background-color: burlywood;
+  width: 50%;
+  margin-top: 80rpx;
+  background-color: #ffffff;
   color: white;
+  border: 1rpx solid #000000;
   border-radius: 98rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+}
+.button1-text {
+  
+  font-size: 34rpx;
+  color: #000000;
+}
+
+.button2{
+  
+  width: 50%;
+  margin-top: 40rpx;
+  margin-bottom: 70rpx;
+  background-color: #ffffff;
+  color: white;
+  border: 1rpx solid #000000;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.icon2{
+  
+  margin-right:30rpx;
+  width:50rpx;
+  height:50rpx;
 }

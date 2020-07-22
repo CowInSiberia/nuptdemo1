@@ -37,7 +37,7 @@ Page({
               this.setData({
                 avatarUrl: res.userInfo.avatarUrl,
                 userInfo: res.userInfo,
-                realname: app.globalData.currentposition,
+                realname: app.globalData.currentname,
               })
             }
           })

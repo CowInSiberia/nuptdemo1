@@ -9,8 +9,7 @@
       size="default"
     ></button>
     <view class="userinfo-nickname-wrapper">
-
-      <button class="userinfo-nickname" bindtap="hide">你好! {{realname}}</button>
+      <button class="userinfo-nickname" bindtap="hide">{{realname}}</button>
     </view>
   </view>
 
@@ -20,11 +19,13 @@
     </view>
   </view> -->
   <view class="uploader">
+    <image class = "icon" src="../../images/icon_personal.png"></image>
     <view class="uploader-text" bindtap="ChangePersonalProfile">
       <text>个人简历</text>
     </view>
   </view>
   <view class="uploader">
+    <image class = "icon" src="../../images/icon_file.png"></image>
     <view class="uploader-text" bindtap="MyProject">
       <text>我的项目</text>
     </view>

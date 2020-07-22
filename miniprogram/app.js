@@ -18,13 +18,14 @@ App({
   },
   globalData:{
     ProjectInfo:[],              //获取项目内容传递到项目大厅
-    projectcurrent1:0,
-    projectcurrent2:0,
-    currentposition:'',          //标记游客与已填写简历用户姓名
+    projectcurrent1:0,           //用户查看项目大厅项目时点击项目获取到的项目在数组中位置的标记，传递到查看页面进行数据获取
+    projectcurrent2:0,           //用户修改自己项目时对项目在数组中位置进行标记定位，传递到编辑页面进行数据获取
+    currentname:'',              //标记游客与已填写简历用户姓名
+    currentposition:'', 
     PersonalProfile:[],          //获取openid绑定信息传递到个人中心
     profileID:'',                //根据openid查询当前微信用户是否在用户数据库内有记录，有则传递条目id无则标记为00
-    projectID:'',
-    ProjectProfile:[]            //根据openid查询当前微信用户是否在项目数据库内有记录，有则传递条目id无则标记00
+    projectID:'',                //我的项目onload中标记当前openid用户在项目数据库内记录，有则传递条目id无则标记为00
+    ProjectProfile:[]            //根据openid查询当前微信用户是否在项目数据库内有记录，有则传递整个条目内容到res
 
   }
 })

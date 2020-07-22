@@ -1,17 +1,17 @@
 Component({
   data: {
-    selected: 0,
+    selected: 1,
     color: "#7A7E83",
-    selectedColor: "#3cc51f",
+    selectedColor: "#000000",
     list: [{
       pagePath: "../Project/Project",
-      iconPath: "../images/icon_component.png",
-      selectedIconPath: "../images/icon_component_HL.png",
+      iconPath: "../images/icon_project.png",
+      selectedIconPath: "../images/icon_project_HL.png",
       text: "项目大厅"
     }, {
       pagePath: "../PersonalCenter/PersonalCenter",
-      iconPath: "../images/icon_API.png",
-      selectedIconPath: "../images/icon_API_HL.png",
+      iconPath: "../images/icon_user.png",
+      selectedIconPath: "../images/icon_user_HL.png",
       text: "个人中心"
     }]
   },

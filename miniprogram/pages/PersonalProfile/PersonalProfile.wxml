@@ -27,5 +27,8 @@
   <i-input  value="{{selfevaluationA}}" type="textarea" title="个人陈述" placeholder="请输入自我评价/简介(最多70字)" bind:change="selfevaluation" maxlength="70" />
 </i-panel>
 
-<button class='button1'  bindtap="SaveIntro" >保存</button>
+<button class='button1'  bindtap="SaveIntro" >
+  <image class = "icon2" src="../../images/icon_save.png"></image>
+  <text class="button1-text">保存</text>
+</button>
 

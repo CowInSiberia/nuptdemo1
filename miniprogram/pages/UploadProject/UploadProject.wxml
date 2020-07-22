@@ -19,6 +19,12 @@
   <i-input  value="{{ProjectIntroductionA}}" type="textarea" title="项目简介" placeholder="请输入项目简介(最多100字)" bind:change="ProjectIntroduction" maxlength="100" />
 </i-panel>
 
-<button class='button1'  bindtap="UploadAppendix" >上传附件</button>
-<button class='button1'  bindtap="UploadProject" >上传项目</button>
+<button class='button1'  bindtap="UploadAppendix" >
+  <image class = "icon2" src="../../images/icon_upload.png"></image>
+  <text class="button1-text">上传附件</text>
+</button>
+<button class='button1'  bindtap="UploadProject" >
+  <image class = "icon2" src="../../images/icon_upload.png"></image>
+  <text class="button1-text">上传项目</text>
+</button>
 

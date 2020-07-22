@@ -12,14 +12,13 @@
   </view>
 
   <view wx:for="{{ProjectNameTemp}}" wx:for-item="ProjectName" class="uploader">
+    <image class = "icon" src="../../images/icon_file.png"></image>
     <view class="uploader-text" bindtap="display" id="{{index}}">
       <text>{{ProjectName}}</text>
     </view>    
   </view>
 
-  <view>
-    <button bindtap="show">数据测试</button>
-  </view>
+
 
 
    

@@ -1,12 +1,16 @@
 
   <view wx:for="{{ProjectNameTemp}}" wx:for-item="ProjectName" class="uploader">
+    <image class = "icon1" src="../../images/icon_file.png"></image>
     <view class="uploader-text" bindtap="Revise" id="{{index}}">
       <text>{{ProjectName}}</text>
     </view>    
   </view>
 
   <view>
-    <button bindtap="Upload">上传</button>
+    <button bindtap="Upload" class="button1">
+      <image class = "icon2" src="../../images/icon_upload.png"></image>
+      <text class = "button1-text">上传</text>
+    </button>
   </view>
 
 

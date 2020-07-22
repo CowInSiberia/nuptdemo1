@@ -39,21 +39,6 @@ Page({
     })
 
   },
-
-  show:function(){
-    // this.setData({
-    //   ProjectNameTemp: getApp().globalData.ProjectInfo,
-    // })
-    
-    var SearchValue=this.data.SearchValue
-
-  },
   
 
-  direct:function(){
-    wx.navigateTo({
-      url: '../Entrance/Entrance',
-      
-    })
-  }
 })
