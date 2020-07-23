@@ -7,14 +7,9 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: '',
-    person:true
+    requestResult: ''
   },
-  hide:function(){
-    this.setData({
-      person:false
-})
-  },
+
   onLoad: function(option) {
     
     if (!wx.cloud) {
@@ -67,8 +62,8 @@ Page({
 
     var that = this;
     db.collection('ProjectProfile').where({
-      // _openid: this.data.useropen,
-      status:"1"
+      _openid: this.data.useropen
+      
     })
     .get({
       success:function(res){
