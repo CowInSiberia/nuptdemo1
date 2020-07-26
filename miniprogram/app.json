@@ -18,7 +18,6 @@
     "pages/Project/Project",
     "pages/blank/blank",
     "pages/UploadProject/UploadProject",
-    "pages/UploadPosition/UploadPosition",
     "pages/PersonalProfile/PersonalProfile",
     "pages/display/display"
   ],

@@ -35,6 +35,9 @@ Page({
       }
     })
   },
+  bindGetUserInfo (e) {
+    console.log(e.detail.userInfo)
+  },
 
   onGetUserInfo: function(e) {
     if (!this.data.logged && e.detail.userInfo) {

@@ -10,7 +10,7 @@ Page({
     requestResult: ''
   },
 
-  onLoad: function(option) {
+  onLoad: function(options) {
     
     if (!wx.cloud) {
       wx.redirectTo({
@@ -32,7 +32,7 @@ Page({
               this.setData({
                 avatarUrl: res.userInfo.avatarUrl,
                 userInfo: res.userInfo,
-                realname: app.globalData.currentname,
+                
               })
             }
           })
@@ -41,7 +41,8 @@ Page({
     }),
     
     this.setData({
-      useropen:app.globalData.openid
+      useropen:app.globalData.openid,
+      realname: app.globalData.currentname,
     })
     //通过唯一openid连接数据库调取个人简历信息
     const db = wx.cloud.database()
@@ -71,7 +72,7 @@ Page({
           projectprofile:res.data
         })
 
-        getApp().globalData.ProjectProfile = that.data.projectprofile
+        getApp().globalData.ProjectProfile1 = that.data.projectprofile
         
       }
       

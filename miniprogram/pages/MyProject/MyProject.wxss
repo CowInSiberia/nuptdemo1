@@ -4,6 +4,7 @@
   flex-direction:row;
   align-items: flex-start;
   box-sizing: border-box;
+
 }
 
 .uploader-text, .tunnel-text {
@@ -11,6 +12,9 @@
   line-height: 52px;
   font-size: 34rpx;
   color: #000000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
 }
 
 
@@ -64,4 +68,8 @@
   
   width:45rpx;
   height:45rpx;
+}
+.text1{
+
+
 }

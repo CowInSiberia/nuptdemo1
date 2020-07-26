@@ -175,7 +175,7 @@ Page({
           // 在返回结果中会包含新创建的记录的 _id
           
           wx.showToast({
-            title: '已保存',
+            title: '已上传',
           })
         },
         fail: err => {

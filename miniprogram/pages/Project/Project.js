@@ -5,13 +5,12 @@ Page({
   data: {
     openid: '',
     studentsId: '',
-    isChecked: false,
     SearchValue:'',
     ProjectNameTemp:[],
     ProjectInformation:[],
   },
   onLoad: function (options) {
-    var ProjectInformation = getApp().globalData.ProjectInfo;
+    var ProjectInformation = getApp().globalData.ProjectInfo1;
     var projectname = [];
       for(var k = 0; k < ProjectInformation.length; k++){
         var PN = ProjectInformation[k].ProjectName
@@ -32,7 +31,7 @@ Page({
   },
 
   display:function(e){
-    app.globalData.projectcurrent1 = e.currentTarget.id
+    getApp().globalData.projectcurrent1 = e.currentTarget.id
     
     wx.navigateTo({
       url:"../display/display"

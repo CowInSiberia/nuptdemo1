@@ -62,10 +62,10 @@ page {
 }
 
 .uploader, .tunnel {
-  height: auto;
+  height: 8vh;
   padding: 0 60rpx 0 40rpx;
   flex-direction:row;
-  align-items: flex-start;
+  align-items: center;
   box-sizing: border-box;
 }
 
@@ -94,8 +94,7 @@ page {
 
 
 .icon{
-  margin-top: 30rpx;
-  margin-right:20rpx;
-  width:60rpx;
-  height:55rpx;
+ margin-right: 1vw;
+  width:5vw;
+  height:4vh;
 }

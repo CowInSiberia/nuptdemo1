@@ -1,7 +1,7 @@
 <i-panel>
-    <i-input  value="{{ProjectNameA}}" placeholder="请输入项目名" type="text" title="项目名称"   bind:blur="ProjectName" maxlength="20" />
-    <i-input  value="{{EmailNumberA}}" type="number" title="联系邮箱" placeholder="请输入邮箱" bind:blur="EmailNumber" maxlength="25" />
-    <i-input  value="{{ProfessorNameA}}" type="text" title="导师/课题组" placeholder="请输入导师姓名" bind:blur="ProfessorName" maxlength="12" />
+    <i-input  value="{{ProjectNameB}}" placeholder="请输入项目名" type="text" title="项目名称"   bind:blur="ProjectName" maxlength="20" />
+    <i-input  value="{{EmailNumberB}}" type="number" title="联系邮箱" placeholder="请输入邮箱" bind:blur="EmailNumber" maxlength="25" />
+    <i-input  value="{{ProfessorNameB}}" type="text" title="导师/课题组" placeholder="请输入导师姓名" bind:blur="ProfessorName" maxlength="12" />
 </i-panel>
 
 <view class="section">
@@ -14,11 +14,15 @@
 </view>
 
 <i-panel>
-  <i-input  value="{{DirectionA}}" type="textarea" title="科研方向" placeholder="请输入项目方向(最多20字)" bind:blur="Direction" maxlength="20" />
-  <i-input  value="{{RequirementA}}" type="textarea" title="招募要求" placeholder="请输入申请要求(最多50字)" bind:blur="Requirement" maxlength="50" />
-  <i-input  value="{{ProjectIntroductionA}}" type="textarea" title="项目简介" placeholder="请输入项目简介(最多100字)" bind:change="ProjectIntroduction" maxlength="100" />
+  <i-input  value="{{DirectionB}}" type="textarea" title="科研方向" placeholder="请输入项目方向(最多20字)" bind:blur="Direction" maxlength="20" />
+  <i-input  value="{{RequirementB}}" type="textarea" title="招募要求" placeholder="请输入申请要求(最多50字)" bind:blur="Requirement" maxlength="50" />
+  <i-input  value="{{ProjectIntroductionB}}" type="textarea" title="项目简介" placeholder="请输入项目简介(最多100字)" bind:change="ProjectIntroduction" maxlength="100" />
 </i-panel>
 
+<button class='button1'  bindtap="UploadAppendix" >
+      <image class = "icon2" src="../../images/icon_upload.png"></image>
+      <text class="button1-text">上传附件</text>
+    </button>
 <button class='button1'  bindtap="SaveProject" >
   <image class = "icon2" src="../../images/icon_save.png"></image>
   <text class="button1-text">保存</text>

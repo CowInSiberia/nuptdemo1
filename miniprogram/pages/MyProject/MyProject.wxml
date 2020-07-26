@@ -2,13 +2,14 @@
   <view wx:for="{{ProjectNameTemp}}" wx:for-item="ProjectName" class="uploader">
     <image class = "icon1" src="../../images/icon_file.png"></image>
     <view class="uploader-text" bindtap="Revise" id="{{index}}">
-      <text>{{ProjectName}}</text>
+      <text >{{ProjectName.ProjectName}}</text>
     </view>
     <button class = "icon3" >
-      <image class = "icon4" src="../../images/icon_noapply.png" wx:if="{{noapply}}" ></image>
-      <image class = "icon4" src="../../images/icon_applying.png" wx:if="{{applying}}"></image>
+      <image class = "icon4" src="../../images/icon_noapply.png" wx:if="{{!ProjectName.applyid}}" ></image>
+      <image class = "icon4" src="../../images/icon_applying.png" wx:if="{{ProjectName.applyid}}" bindtap="ViewApplicant" id="{{index}}"></image>
     </button>
   </view>
+
 
   <view wx:if="{{position}}">
     <button bindtap="Upload" class="button1">

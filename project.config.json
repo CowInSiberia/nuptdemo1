@@ -29,7 +29,7 @@
 	},
 	"appid": "wx407d15c6171f84db",
 	"projectname": "nuptdemo1",
-	"libVersion": "2.8.1",
+	"libVersion": "2.8.3",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",

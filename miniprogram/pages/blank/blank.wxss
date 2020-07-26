@@ -56,5 +56,18 @@ font-size: 40rpx;
   font-size: 34rpx;
   color: #000000;
 }
+.button1{
+  
+  width: 50%;
+  margin-top: 150rpx;
+  background-color: #ffffff;
+  color: white;
+  border: 1rpx solid #000000;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
+}
 

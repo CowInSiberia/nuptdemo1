@@ -1,0 +1,30 @@
+<!-- <text>{{ProjectID}}</text> -->
+  <i-panel title="姓名">
+    <view style="padding: 15px;">{{username}}</view>
+  </i-panel>
+
+  <i-panel title="学院">
+    <view style="padding: 15px;">{{college}}</view>
+  </i-panel>
+
+  <i-panel title="能力" >
+    <view style="padding: 15px;">{{ability}}</view>
+  </i-panel>
+
+  <i-panel title="自我介绍">
+    <view style="padding: 15px;">{{selfevaluation}}</view>
+  </i-panel>
+
+  <i-panel title="联系方式">
+    <view style="padding: 15px;">{{qqnumber}}</view>
+  </i-panel>
+
+
+<button class='button1' >
+  <image class = "icon2" src="../../images/icon_accept.png"></image>
+  <text class="button1-text">同意</text>
+</button>
+<button class='button2' >
+  <image class = "icon2" src="../../images/icon_refuse.png"></image>
+  <text class="button1-text">拒绝</text>
+</button>

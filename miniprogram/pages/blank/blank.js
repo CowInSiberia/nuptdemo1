@@ -14,6 +14,10 @@ Page({
       return
     }
 
+    wx.setNavigationBarTitle({
+      title: '科研项目互选平台'
+    })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -30,6 +34,9 @@ Page({
         }
       }
     })
+  },
+  bindGetUserInfo (e) {
+    console.log(e.detail.userInfo)
   },
 
   onGetUserInfo: function(e) {
@@ -54,8 +61,7 @@ Page({
         that.setData({
           useropen:app.globalData.openid
         })
-       
-        
+
         const db = wx.cloud.database()
         db.collection('PersonalProfile').where({
           _openid: that.data.useropen,
@@ -73,7 +79,8 @@ Page({
           
             //载入项目大厅            
             db.collection('ProjectProfile').where({
-              status:"1"
+              status:"1",
+              isChecked:true
             })
             .get({
               success: function(res) {             
@@ -81,15 +88,12 @@ Page({
               that.setData({
                 projectinfo:res.data
               })
-              getApp().globalData.ProjectInfo = that.data.projectinfo  
-
+              getApp().globalData.ProjectInfo1 = that.data.projectinfo  
+              
               wx.switchTab({
               url:"../PersonalCenter/PersonalCenter"
               })
             }})
-          
-          
-
         }})
         
       },
@@ -98,52 +102,40 @@ Page({
       }
     })
   },
-  
-  // tabbar:function(){
-  //   var that = this;
-  //   const db = wx.cloud.database()
-  //   db.collection('students').where({
-  //     pro:false
-  //   })
-  //   .get({
-  //     success: function(res) {
-  //     var asd=[]
-  //     for(var k=0;k<res.data.length;k++){
-  //       var PN = res.data[k].ProjectName
-  //       asd.push(PN)
 
-  //     }
-  //      that.setData({
-  //           asd:asd
-  //         })
-  //       console.log(asd)
-        
-  //       getApp().globalData.ProjectInfo = that.data.asd  
-  //       wx.switchTab({
-  //       url: '../Project/Project',
-  //       })
-  //       // getApp().globalData.ProjectInfo = res.data
-  //   }})
+  limit:function(){
+    wx.requestSubscribeMessage({
+      tmplIds: ['I16rb5U_mgrglaJq5Jj1jOP5tMD_O0n-HqJ4iY7xYFM'],    //这里填写你的模板ID
+      success:res=>{
+          wx.showToast({
+            title: '已开启',
+          })
+      },
+      fail:res=>{
+          wx.showToast({
+            title: '已拒绝',
+          })
+      }
+    })   
+  },
 
+  push:function(){
+    var that=this
     
+    wx.cloud.callFunction({
+      name:"pushtest",
+      data:{
+        openid:"ohBi65cT_f_pi_TNI394CWPgxiGE"   //传入需要发送信息的用户openid
+      },
+      success:res=>{
+        console.log(res)
+      },
+      fail:res=>{
+        console.log(res)
+      },
+    })
+    
+  }
   
-  // },
 
-  // entrance:function(){
-  //   wx.navigateTo({
-  //     url:'../Entrance/Entrance'
-  //   })
-  // },
-
-  // uploadproject:function(){
-  //   wx.navigateTo({
-  //     url:'../UploadProject/UploadProject'
-  //   })
-  // },
-
-  // uploadposition:function(){
-  //   wx.navigateTo({
-  //     url:'../UploadPosition/UploadPosition'
-  //   })
-  // }
 })

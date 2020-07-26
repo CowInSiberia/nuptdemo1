@@ -5,8 +5,8 @@ Page({
   data: {
     ProjectNameTemp:[],
     position:false,
-    noapply:true,
-    applying:false
+    noapply:false,
+    applying:true
   },
   onLoad: function (options) {
     this.setData({
@@ -26,34 +26,50 @@ Page({
     
     
     //获取个人项目列表
-    var ProjectInformation1 = getApp().globalData.ProjectProfile;
-    var projectname = [];
-      for(var k = 0; k < ProjectInformation1.length; k++){
-        var PN = ProjectInformation1[k].ProjectName
-        projectname.push(PN)
-      }
+    var ProjectInformation1 = getApp().globalData.ProjectProfile1;
+   // console.log(ProjectInformation1)
+   // var projectname = [];
+      //for(var k = 0; k < ProjectInformation1.length; k++){
+     //   var PN = ProjectInformation1[k].ProjectName
+      //  projectname.push(PN)
+        
+      //}
 
     this.setData({
-      ProjectNameTemp: projectname
+      ProjectNameTemp: getApp().globalData.ProjectProfile1
     })
+
+    // for(var i = 0; i < projectname.length; i++){
+    //   var name = projectname[i]
+
+    //   const db = wx.cloud.database()
+    //   db.collection('ProjectProfile').where({
+    //     ProjectName: name
+    //     }).get({
+    //       success:function(res){
+    //         console.log(res.data)
+    //       }
+    //     })
+    // }
 
     //获取已填写项目信息
     //通过唯一openid连接数据库调取项目信息
-    var that = this;
+
     const db = wx.cloud.database()
     db.collection('ProjectProfile').where({
       _openid: this.data.useropen,
     })
     .get({
       success:function(res){
-        if(res.data[0].applyid){
-          that.setData({
-            noapply:false,
-            applying:true
-          })
-        }else{
+        // if(res.data[0].applyid){
+        //   that.setData({
+        //     noapply:false,
+        //     applying:true,
+        //     applicant:res.data[0].applyid
+        //   })
+        // }else{
 
-        }
+        // }
         
         if(res.data.length == 0){
           getApp().globalData.projectID = "00"
@@ -70,8 +86,8 @@ Page({
   },
   
   Revise:function(e){
-    app.globalData.projectcurrent2 = e.currentTarget.id
-    console.log(e.currentTarget.id)
+    getApp().globalData.projectcurrent2 = e.currentTarget.id
+    // console.log(e.currentTarget.id)
 
     wx.navigateTo({
       url:"../EditProject/EditProject"
@@ -79,6 +95,31 @@ Page({
     
   },
 
+  ViewApplicant:function(e){
+    getApp().globalData.projectcurrent3 = e.currentTarget.id
+    var projectid = getApp().globalData.projectcurrent3
+    var thisproject = getApp().globalData.ProjectProfile1[projectid];
+
+    this.setData({
+      applyid:thisproject.applyid
+    })
+    
+    if(this.data.applyid){
+      getApp().globalData.applicantcurrent = this.data.applyid
+      wx.navigateTo({
+        url: '../Applicant/Applicant',
+      })
+    }else {
+      wx.showToast({
+        icon: 'none',
+        title: '目前暂无申请者申请'
+      })
+    }
+    
+
+  },
+
+  
 
   Upload:function(e){ 
     wx.navigateTo({

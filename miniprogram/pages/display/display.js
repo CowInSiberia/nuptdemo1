@@ -8,7 +8,8 @@ Page({
   onLoad: function() {
 
     var projectid = getApp().globalData.projectcurrent1;
-    var test = getApp().globalData.ProjectInfo[projectid];
+    var test = getApp().globalData.ProjectInfo1[projectid];
+    
     
     this.setData({
       ProjectID:test._id,
@@ -20,6 +21,7 @@ Page({
       Ability:test.Requirement,
       Introduction:test.ProjectIntroduction,
       FileID:test.fileID,
+      applyID:test.applyid,
       UserPosition:getApp().globalData.currentposition
     })
     
@@ -75,8 +77,13 @@ Page({
       this.setData({
         useropen:app.globalData.openid
       })
-      
-      const db = wx.cloud.database()
+      if(this.data.applyID){
+        wx.showToast({
+          icon: 'none',
+          title: '抱歉，该项目已被申请，请邮件联系导师'
+        })
+      }else{
+        const db = wx.cloud.database()
       db.collection('ProjectProfile').doc(this.data.ProjectID).update({
         data:{
           applyid:this.data.useropen
@@ -86,6 +93,9 @@ Page({
         icon:'none',
         title: '申请成功，请等待导师回复',
       })
+      }
+      
+      
 
     }
 
