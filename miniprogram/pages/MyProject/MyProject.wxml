@@ -5,7 +5,7 @@
       <text >{{ProjectName.ProjectName}}</text>
     </view>
     <button class = "icon3" >
-      <image class = "icon4" src="../../images/icon_noapply.png" wx:if="{{!ProjectName.applyid}}" ></image>
+      <image class = "icon4" src="../../images/icon_noapply.png" wx:if="{{!ProjectName.applyid}}" bindtap="ViewApplicant" id="{{index}}"></image>
       <image class = "icon4" src="../../images/icon_applying.png" wx:if="{{ProjectName.applyid}}" bindtap="ViewApplicant" id="{{index}}"></image>
     </button>
   </view>
@@ -13,7 +13,6 @@
 
   <view wx:if="{{position}}">
     <button bindtap="Upload" class="button1">
-      <image class = "icon2" src="../../images/icon_upload.png"></image>
       <text class = "button1-text">上传</text>
     </button>
   </view>

@@ -1,8 +1,8 @@
 .uploader, .tunnel {
-  height: auto;
+  height: 9vh;
   padding: 0 60rpx 0 40rpx;
   flex-direction:row;
-  align-items: flex-start;
+  align-items: center;
   box-sizing: border-box;
 
 }
@@ -45,10 +45,10 @@
 }
 
 .icon1{
-  margin-top: 30rpx;
+  
   margin-right:20rpx;
-  width:90rpx;
-  height:55rpx;
+  width:12vw;
+  height:5vh;
 }
 
 .icon2{
@@ -68,8 +68,4 @@
   
   width:45rpx;
   height:45rpx;
-}
-.text1{
-
-
 }

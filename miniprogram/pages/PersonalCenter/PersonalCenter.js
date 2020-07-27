@@ -120,8 +120,11 @@ Page({
         }
       }
     })
-    
-
+  },
+  examine:function(){
+    wx.navigateTo({
+      url: '../examine/examine',
+    })
   }
 
 

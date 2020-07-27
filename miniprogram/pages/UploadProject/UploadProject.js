@@ -13,19 +13,19 @@ Page({
 
   ProjectName:function(event){
     this.setData({
-      ProjectName:event.detail.detail.value
+      ProjectName:event.detail.value
     })
   },
 
   EmailNumber:function(event){
     this.setData({
-      EmailNumber:event.detail.detail.value
+      EmailNumber:event.detail.value
     })
   },
 
   ProfessorName:function(event){
     this.setData({
-      ProfessorName:event.detail.detail.value
+      ProfessorName:event.detail.value
     })
   },
 
@@ -38,19 +38,19 @@ Page({
 
   Direction:function(event){
     this.setData({
-      Direction:event.detail.detail.value
+      Direction:event.detail.value
     })
   },
 
   Requirement:function(event){
     this.setData({
-      Requirement:event.detail.detail.value
+      Requirement:event.detail.value
     })
   },
 
   ProjectIntroduction:function(event){
     this.setData({
-      ProjectIntroduction:event.detail.detail.value
+      ProjectIntroduction:event.detail.value
     })
   },
 
@@ -168,6 +168,7 @@ Page({
           Direction: this.data.Direction,
           Requirement: this.data.Requirement,
           ProjectIntroduction: this.data.ProjectIntroduction,
+          isChecked: false,
           status:"1",
           fileID:that.data.filename
         },

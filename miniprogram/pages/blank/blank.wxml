@@ -18,11 +18,6 @@
     <text class = "button1-text">Hello</text>
   </button>
 
-  <view class="padding flex flex-direction">
-    <!-- <button class="cu-btn bg-grey lg">玄灰</button> -->
-    <button class="cu-btn line-red round lg shadow">我是一个按钮</button>
-    <button class="cu-btn bg-red margin-tb-sm lg">嫣红</button>
-  </view>
 
 <!-- <button class ='button2' bindtap="limit">
   <text class = "button1-text">授权</text>

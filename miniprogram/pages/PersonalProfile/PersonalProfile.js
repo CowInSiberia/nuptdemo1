@@ -84,19 +84,19 @@ Page({
 
   username:function(event){
     this.setData({
-      username:event.detail.detail.value
+      username:event.detail.value
     })
   },
 
   phonenumber:function(event){
     this.setData({
-      phonenumber:event.detail.detail.value
+      phonenumber:event.detail.value
     })
   },
 
   qqnumber:function(event){
     this.setData({
-      qqnumber:event.detail.detail.value
+      qqnumber:event.detail.value
     })
   },
 
@@ -115,81 +115,121 @@ Page({
 
   ability:function(event){
     this.setData({
-      ability:event.detail.detail.value
+      ability:event.detail.value
     })
   },
 
   selfevaluation:function(event){
     this.setData({
-      selfevaluation:event.detail.detail.value
+      selfevaluation:event.detail.value
     })
   },
 
-  SaveIntro:function(){
+  SaveIntro:function(e){
+    
     this.setData({
       positionvalue:this.data.position[this.data.k1],
       collegevalue:this.data.college[this.data.k2]
     })
-
-
-    const db = wx.cloud.database()
-    if(this.data.formerprofile){
-      
-
-      //更新数据
-      db.collection('PersonalProfile').doc(getApp().globalData.profileID).update({
-        data: {
-          username: this.data.username,
-          phonenumber: this.data.phonenumber,
-          qqnumber: this.data.qqnumber,
-          position: this.data.positionvalue,
-          college: this.data.collegevalue,
-          ability: this.data.ability,
-          selfevaluation: this.data.selfevaluation,
-        },
-        success: res => {
-          // 在返回结果中会包含新创建的记录的 _id
-          
-          wx.showToast({
-            title: '已保存',
-          })
-        },
-        fail: err => {
-          wx.showToast({
-            icon: 'none',
-            title: '保存失败'
-          })
-        }
+    if(this.data.username == null){
+      wx.showToast({
+        icon: 'none',
+        title: '请输入姓名'
+      })
+    }else if(this.data.phonenumber == null){
+      wx.showToast({
+        icon: 'none',
+        title: '请输入手机号'
+      })
+    }else if(this.data.qqnumber == null){
+      wx.showToast({
+        icon: 'none',
+        title: '请输入QQ号'
+      })
+    }else if(this.data.positionvalue == null){
+      wx.showToast({
+        icon: 'none',
+        title: '请选择身份'
+      })
+    }else if(this.data.collegevalue == null){
+      wx.showToast({
+        icon: 'none',
+        title: '请选择所属学院'
+      })
+    }else if(this.data.ability == null){
+      wx.showToast({
+        icon: 'none',
+        title: '请填写自己掌握技能/研究方向'
+      })
+    }else if(this.data.selfevaluation == null){
+      wx.showToast({
+        icon: 'none',
+        title: '请填写自我评价/介绍'
       })
     }else{
-      db.collection('PersonalProfile').add({
-        data: {
-          username: this.data.username,
-          phonenumber: this.data.phonenumber,
-          qqnumber: this.data.qqnumber,
-          position: this.data.positionvalue,
-          college: this.data.collegevalue,
-          ability: this.data.ability,
-          selfevaluation: this.data.selfevaluation,
-        },
-        success: res => {
-          // 在返回结果中会包含新创建的记录的 _id
-          
-          wx.showToast({
-            title: '已保存',
-          })
-        },
-        fail: err => {
-          wx.showToast({
-            icon: 'none',
-            title: '保存失败'
-          })
-        }
-      })
+      var that = this;
+
+      const db = wx.cloud.database()
+      if(this.data.formerprofile){
+  
+        //更新数据
+        db.collection('PersonalProfile').doc(getApp().globalData.profileID).update({
+          data: {
+            username: this.data.username,
+            phonenumber: this.data.phonenumber,
+            qqnumber: this.data.qqnumber,
+            position: this.data.positionvalue,
+            college: this.data.collegevalue,
+            ability: this.data.ability,
+            selfevaluation: this.data.selfevaluation,
+            isChecked:false
+          },
+          success: res => {
+            that.setData({
+              modalName: e.currentTarget.dataset.target,
+            })
+          },
+          fail: err => {
+            wx.showToast({
+              icon: 'none',
+              title: '保存失败'
+            })
+          }
+        })
+      }else{
+        db.collection('PersonalProfile').add({
+          data: {
+            username: this.data.username,
+            phonenumber: this.data.phonenumber,
+            qqnumber: this.data.qqnumber,
+            position: this.data.positionvalue,
+            college: this.data.collegevalue,
+            ability: this.data.ability,
+            selfevaluation: this.data.selfevaluation,
+            isChecked:false
+          },
+          success: res => {
+            that.setData({
+              modalName: e.currentTarget.dataset.target,
+            })
+          },
+          fail: err => {
+            wx.showToast({
+              icon: 'none',
+              title: '保存失败'
+            })
+          }
+        })
+      }
 
     }
-    
-      
+       
+  },
+  
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
   },
   
   

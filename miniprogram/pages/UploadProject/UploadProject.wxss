@@ -1,15 +1,4 @@
 /**index.wxss**/
-
-page {
-  background: #f6f6f6;
-  
-}
-
-.picker{
-  padding: 13px;
-  background-color: #FFFFFF;
-}
-
 .button1{
   
   width: 50%;
@@ -29,10 +18,29 @@ page {
   font-size: 34rpx;
   color: #000000;
 }
+.button2{
+  
+  width: 50%;
+  margin-top: 50rpx;
+  margin-bottom: 60rpx;
+  background-color: #ffffff;
+  color: white;
+  border: 1rpx solid #000000;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
 
 .icon2{
   
   margin-right:30rpx;
   width:55rpx;
   height:50rpx;
+}
+
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
 }

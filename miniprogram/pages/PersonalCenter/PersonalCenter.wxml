@@ -25,4 +25,10 @@
       <text>我的项目</text>
     </view>
   </view>
+  <view class="uploader">
+    <image class = "icon" src="../../images/icon_file.png"></image>
+    <view class="uploader-text" bindtap="examine">
+      <text>审核</text>
+    </view>
+  </view>
 </view>

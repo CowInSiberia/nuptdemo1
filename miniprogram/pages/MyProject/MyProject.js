@@ -9,6 +9,11 @@ Page({
     applying:true
   },
   onLoad: function (options) {
+
+    wx.setNavigationBarTitle({
+      title: '我的项目'
+    })
+
     this.setData({
       useropen:app.globalData.openid,
       userPosition: getApp().globalData.currentposition
@@ -25,8 +30,8 @@ Page({
 
     
     
-    //获取个人项目列表
-    var ProjectInformation1 = getApp().globalData.ProjectProfile1;
+    
+    
    // console.log(ProjectInformation1)
    // var projectname = [];
       //for(var k = 0; k < ProjectInformation1.length; k++){
@@ -34,23 +39,11 @@ Page({
       //  projectname.push(PN)
         
       //}
-
+    
+    //获取个人项目列表
     this.setData({
       ProjectNameTemp: getApp().globalData.ProjectProfile1
     })
-
-    // for(var i = 0; i < projectname.length; i++){
-    //   var name = projectname[i]
-
-    //   const db = wx.cloud.database()
-    //   db.collection('ProjectProfile').where({
-    //     ProjectName: name
-    //     }).get({
-    //       success:function(res){
-    //         console.log(res.data)
-    //       }
-    //     })
-    // }
 
     //获取已填写项目信息
     //通过唯一openid连接数据库调取项目信息
@@ -58,19 +51,10 @@ Page({
     const db = wx.cloud.database()
     db.collection('ProjectProfile').where({
       _openid: this.data.useropen,
+      isChecked:true
     })
     .get({
-      success:function(res){
-        // if(res.data[0].applyid){
-        //   that.setData({
-        //     noapply:false,
-        //     applying:true,
-        //     applicant:res.data[0].applyid
-        //   })
-        // }else{
-
-        // }
-        
+      success:function(res){        
         if(res.data.length == 0){
           getApp().globalData.projectID = "00"
         }else{
@@ -78,16 +62,10 @@ Page({
         }
       }
     })
-   
-
-    wx.setNavigationBarTitle({
-      title: '我的项目'
-    })
   },
   
   Revise:function(e){
     getApp().globalData.projectcurrent2 = e.currentTarget.id
-    // console.log(e.currentTarget.id)
 
     wx.navigateTo({
       url:"../EditProject/EditProject"
