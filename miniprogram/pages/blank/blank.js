@@ -95,47 +95,14 @@ Page({
               })
             }})
         }})
-        
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
       }
-    })
+    })  
   },
 
   limit:function(){
-    wx.requestSubscribeMessage({
-      tmplIds: ['I16rb5U_mgrglaJq5Jj1jOP5tMD_O0n-HqJ4iY7xYFM'],    //这里填写你的模板ID
-      success:res=>{
-          wx.showToast({
-            title: '已开启',
-          })
-      },
-      fail:res=>{
-          wx.showToast({
-            title: '已拒绝',
-          })
-      }
-    })   
+    
   },
-
-  push:function(){
-    var that=this
-    
-    wx.cloud.callFunction({
-      name:"pushtest",
-      data:{
-        openid:"ohBi65cT_f_pi_TNI394CWPgxiGE"   //传入需要发送信息的用户openid
-      },
-      success:res=>{
-        console.log(res)
-      },
-      fail:res=>{
-        console.log(res)
-      },
-    })
-    
-  }
-  
-
 })

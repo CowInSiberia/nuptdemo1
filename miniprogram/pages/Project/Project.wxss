@@ -46,7 +46,7 @@
 
 
 .uploader, .tunnel {
-  height: auto;
+  height: 8vh;
   padding: 0 0 0 40rpx;
   flex-direction: row;
   align-items: flex-start;
@@ -67,8 +67,8 @@
 }
 
 .icon{
-  margin-top: 30rpx;
+  margin-top: 2vh;
   margin-right:20rpx;
   width:60rpx;
-  height:55rpx;
+  height:4vh;
 }

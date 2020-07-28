@@ -123,7 +123,7 @@ Page({
   },
   examine:function(){
     wx.navigateTo({
-      url: '../examine/examine',
+      url: '../ExamineEntrance/ExamineEntrance',
     })
   }
 

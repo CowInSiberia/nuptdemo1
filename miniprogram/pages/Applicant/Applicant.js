@@ -6,6 +6,10 @@ Page({
 
   },
   onLoad: function(option){
+    wx.setNavigationBarTitle({
+      title: '申请者'
+    })
+
     var that = this;
     this.setData({
       applyid: getApp().globalData.applicantcurrent

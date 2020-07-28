@@ -1,6 +1,6 @@
 <view wx:for="{{CheckUserInfo}}" wx:for-item="CUI" class="uploader">
   <image class = "icon" src="../../images/icon_file.png"></image>
-  <view class="uploader-text" bindtap="display" id="{{index}}">
+  <view class="uploader-text" bindtap="ViewProfile" id="{{index}}">
     <text>{{CUI.username}}</text>
   </view>    
 </view>

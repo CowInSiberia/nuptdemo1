@@ -21,7 +21,7 @@
 
 <!-- <button class ='button2' bindtap="limit">
   <text class = "button1-text">授权</text>
-</button>
-<button class ='button2' bindtap="push">
+</button> -->
+<!-- <button class ='button2' bindtap="push">
   <text class = "button1-text">推送</text>
 </button> -->

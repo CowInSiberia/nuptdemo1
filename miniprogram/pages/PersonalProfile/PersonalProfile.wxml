@@ -55,9 +55,6 @@
         您的个人简历内容已提交，请等待管理员审核。
       </view>
       <view class="cu-bar bg-white justify-center">
-        <!-- <view class="action">
-          <button class="cu-btn lines-black round shadow" bindtap="hideModal">确定</button>
-        </view> -->
         <view class="action margin-0 flex-sub text-black solid-left" bindtap="hideModal">确定</view>
       </view>
     </view>

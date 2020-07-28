@@ -1,0 +1,94 @@
+
+<view>
+  <view class="cu-timeline">
+    <view class="cu-time">用户信息</view>
+    <view class="cu-item">
+      <view class = "content">
+        <view class="cu-capsule radius">
+          <view class="cu-tag bg-brown light shadow">姓名</view>
+        </view>
+        <view class="margin-top">
+          {{username}}
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class = "content">
+        <view class="cu-capsule radius">
+          <view class="cu-tag bg-brown light shadow">联系方式</view>
+        </view>
+        <view class="margin-top">
+          {{phonenumber}}
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class = "content">
+        <view class="cu-capsule radius">
+          <view class="cu-tag bg-brown light shadow">身份</view>
+        </view>
+        <view class="margin-top">
+          {{position}}
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class = "content">
+        <view class="cu-capsule radius">
+          <view class="cu-tag bg-brown light shadow">学院</view>
+        </view>
+        <view class="margin-top">
+          {{college}}
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class = "content">
+        <view class="cu-capsule radius">
+          <view class="cu-tag bg-brown light shadow">科研</view>
+        </view>
+        <view class="margin-top">
+          {{ability}}
+        </view>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class = "content">
+        <view class="cu-capsule radius">
+          <view class="cu-tag bg-brown light shadow">自我介绍</view>
+        </view>
+        <view class="margin-top">
+          {{selfevaluation}}
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <button bindtap="Grant" class="button1" data-target="DialogModal1">
+    <text class = "button1-text">同意</text>
+  </button>
+  <button bindtap="Refuse" class="button1">
+    <text class = "button1-text">拒绝</text>
+  </button>
+
+  <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">审核结果</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+        当前内容已审核完毕。
+      </view>
+      <view class="cu-bar bg-white justify-center">
+        <view class="action margin-0 flex-sub text-black solid-left" bindtap="hideModal">确定</view>
+      </view>
+    </view>
+  </view>
+  
+</view>
+
+
+

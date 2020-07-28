@@ -19,7 +19,8 @@
     "pages/blank/blank",
     "pages/UploadProject/UploadProject",
     "pages/PersonalProfile/PersonalProfile",
-    "pages/display/display"
+    "pages/display/display",
+    "pages/ExamineEntrance/ExamineEntrance"
   ],
   "tabBar": {
     "custom": true,

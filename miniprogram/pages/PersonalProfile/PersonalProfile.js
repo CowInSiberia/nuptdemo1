@@ -167,6 +167,13 @@ Page({
         title: '请填写自我评价/介绍'
       })
     }else{
+      wx.requestSubscribeMessage({
+        tmplIds: ['I16rb5U_mgrglaJq5Jj1jOP5tMD_O0n-HqJ4iY7xYFM'],    //这里填写你的模板ID
+        success:res=>{
+        },
+        fail:res=>{
+        }
+      })   
       var that = this;
 
       const db = wx.cloud.database()
@@ -185,6 +192,7 @@ Page({
             isChecked:false
           },
           success: res => {
+            
             that.setData({
               modalName: e.currentTarget.dataset.target,
             })
