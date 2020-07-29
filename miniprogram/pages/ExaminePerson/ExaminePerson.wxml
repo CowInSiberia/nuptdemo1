@@ -1,63 +1,63 @@
 
 <view>
   <view class="cu-timeline">
-    <view class="cu-time">用户信息</view>
-    <view class="cu-item">
-      <view class = "content">
+    <view class="cu-time ">用户信息</view>
+    <view class="cu-item text-red">
+      <view class = "content bg-black shadow-blur">
         <view class="cu-capsule radius">
-          <view class="cu-tag bg-brown light shadow">姓名</view>
+          <view class="cu-tag bg-red shadow">姓名</view>
         </view>
-        <view class="margin-top">
+        <view class="margin-top text-white">
           {{username}}
         </view>
       </view>
     </view>
-    <view class="cu-item">
-      <view class = "content">
+    <view class="cu-item text-red">
+      <view class = "content bg-black shadow-blur">
         <view class="cu-capsule radius">
-          <view class="cu-tag bg-brown light shadow">联系方式</view>
+          <view class="cu-tag bg-red shadow">联系方式</view>
         </view>
-        <view class="margin-top">
+        <view class="margin-top text-white">
           {{phonenumber}}
         </view>
       </view>
     </view>
-    <view class="cu-item">
-      <view class = "content">
+    <view class="cu-item text-red">
+      <view class = "content bg-black shadow-blur">
         <view class="cu-capsule radius">
-          <view class="cu-tag bg-brown light shadow">身份</view>
+          <view class="cu-tag bg-red shadow">身份</view>
         </view>
-        <view class="margin-top">
+        <view class="margin-top text-white">
           {{position}}
         </view>
       </view>
     </view>
-    <view class="cu-item">
-      <view class = "content">
+    <view class="cu-item text-red">
+      <view class = "content bg-black shadow-blur">
         <view class="cu-capsule radius">
-          <view class="cu-tag bg-brown light shadow">学院</view>
+          <view class="cu-tag bg-red shadow">学院</view>
         </view>
-        <view class="margin-top">
+        <view class="margin-top text-white">
           {{college}}
         </view>
       </view>
     </view>
-    <view class="cu-item">
-      <view class = "content">
+    <view class="cu-item text-red">
+      <view class = "content bg-black shadow-blur">
         <view class="cu-capsule radius">
-          <view class="cu-tag bg-brown light shadow">科研</view>
+          <view class="cu-tag bg-red shadow">科研</view>
         </view>
-        <view class="margin-top">
+        <view class="margin-top text-white">
           {{ability}}
         </view>
       </view>
     </view>
-    <view class="cu-item">
-      <view class = "content">
+    <view class="cu-item text-red">
+      <view class = "content bg-black shadow-blur">
         <view class="cu-capsule radius">
-          <view class="cu-tag bg-brown light shadow">自我介绍</view>
+          <view class="cu-tag bg-red shadow">自我介绍</view>
         </view>
-        <view class="margin-top">
+        <view class="margin-top text-white">
           {{selfevaluation}}
         </view>
       </view>
@@ -89,6 +89,3 @@
   </view>
   
 </view>
-
-
-

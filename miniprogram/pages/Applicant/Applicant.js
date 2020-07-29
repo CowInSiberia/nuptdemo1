@@ -31,5 +31,31 @@ Page({
       }
     })
 
-  }
+  },
+  Accept:function(e){
+    var projectid = getApp().globalData.projectcurrent3
+    var thisproject = getApp().globalData.ProjectProfile1[projectid];
+    
+    var that = this;
+    const db = wx.cloud.database()
+    db.collection('ProjectProfile').doc(thisproject._id).update({
+      data:{
+        status:2
+      },
+      success:res=>{
+        that.setData({
+          modalName: e.currentTarget.dataset.target,
+        }) 
+      },
+      fail:err=>{
+      }
+    })
+
+  },
+
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
 })

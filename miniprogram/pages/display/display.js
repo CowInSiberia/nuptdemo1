@@ -62,7 +62,8 @@ Page({
 
   },
 
-  Apply:function(){
+  Apply:function(e){
+    var that = this;
     if(this.data.UserPosition == "游客"){
       wx.showToast({
         icon: 'none',
@@ -84,22 +85,23 @@ Page({
         })
       }else{
         const db = wx.cloud.database()
-      db.collection('ProjectProfile').doc(this.data.ProjectID).update({
+        db.collection('ProjectProfile').doc(this.data.ProjectID).update({
         data:{
           applyid:this.data.useropen
-        }
-      })
-      wx.showToast({
-        icon:'none',
-        title: '申请成功，请等待导师回复',
+        },
+        success:res=>{
+          that.setData({
+            modalName: e.currentTarget.dataset.target,
+          })
+        }   
       })
       }
-      
-      
-
     }
+  },
 
-
-    
-  }
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
 })
