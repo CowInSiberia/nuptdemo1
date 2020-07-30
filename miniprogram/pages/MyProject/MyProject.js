@@ -26,12 +26,13 @@ Page({
 
     }else if(this.data.userPosition == "学生"){
 
+    }else if(this.data.userPosition == "管理员"){
+      this.setData({
+        position:true
+      })
+
     }
 
-    
-    
-    
-    
    // console.log(ProjectInformation1)
    // var projectname = [];
       //for(var k = 0; k < ProjectInformation1.length; k++){

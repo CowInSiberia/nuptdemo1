@@ -58,8 +58,6 @@ Page({
       })
 
     }
-    
-
   },
 
   Apply:function(e){
@@ -73,6 +71,11 @@ Page({
       wx.showToast({
         icon: 'none',
         title: '抱歉，教师身份无法申请项目'
+      })
+    }else if(this.data.UserPosition == "管理员"){
+      wx.showToast({
+        icon: 'none',
+        title: '抱歉，管理员无法申请项目'
       })
     }else if(this.data.UserPosition == "学生"){
       this.setData({

@@ -8,7 +8,7 @@ exports.main = async (event, context) => {
   try {
     const result = await cloud.openapi.subscribeMessage.send({
         touser: event.openid,
-        page: 'pages/index/index',
+        page: 'pages/blank/blank',
         lang: 'zh_CN',
         data: {
           thing2: {
@@ -18,7 +18,7 @@ exports.main = async (event, context) => {
             value: event.username
           },
           thing7: {
-            value: '用户身份资料审核'
+            value: event.censorword
           },
           time11: {
             value: event.currenttime

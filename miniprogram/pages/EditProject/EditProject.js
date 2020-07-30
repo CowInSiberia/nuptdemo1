@@ -127,14 +127,13 @@ Page({
             cloudPath,
             filePath,
             success: res => {
-              // console.log('[上传附件] 成功：', res)
+             
               wx.showToast({
                 icon: 'none',
                 title: '上传附件成功',
               })             
             },
             fail: e => {
-              // console.error('[上传附件] 失败：', e)
               wx.showToast({
                 icon: 'none',
                 title: '上传附件失败',

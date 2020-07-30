@@ -11,10 +11,10 @@
         <view class="weui-search-bar__cancel-btn" bindtap="show">搜索</view>
   </view>
 
-  <view wx:for="{{ProjectNameTemp}}" wx:for-item="ProjectName" class="uploader">
+  <view wx:for="{{ProjectNameTemp}}" wx:for-item="PN" class="uploader">
     <image class = "icon" src="../../images/icon_file.png"></image>
     <view class="uploader-text" bindtap="display" id="{{index}}">
-      <text>{{ProjectName}}</text>
+      <text>{{PN.ProjectName}}</text>
     </view>    
   </view>
 

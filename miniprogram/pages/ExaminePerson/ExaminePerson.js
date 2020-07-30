@@ -59,9 +59,10 @@ Page({
         wx.cloud.callFunction({
           name:"pushtest",
           data:{
-            openid:"ohBi65cT_f_pi_TNI394CWPgxiGE",   //传入需要发送信息的用户openid
+            openid:this.data.openid,   //传入需要发送信息的用户openid
             username:this.data.username,
-            currenttime:time
+            currenttime:time,
+            censorword:"您的身份申请已通过"
           },
           success:res=>{
             console.log(res)

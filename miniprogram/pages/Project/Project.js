@@ -11,14 +11,14 @@ Page({
   },
   onLoad: function (options) {
     var ProjectInformation = getApp().globalData.ProjectInfo1;
-    var projectname = [];
-      for(var k = 0; k < ProjectInformation.length; k++){
-        var PN = ProjectInformation[k].ProjectName
-        projectname.push(PN)
-      }
+    // var projectname = [];
+    //   for(var k = 0; k < ProjectInformation.length; k++){
+    //     var PN = ProjectInformation[k].ProjectName
+    //     projectname.push(PN)
+    //   }
 
     this.setData({
-      ProjectNameTemp: projectname
+      ProjectNameTemp: ProjectInformation
     })
     
     wx.setNavigationBarTitle({

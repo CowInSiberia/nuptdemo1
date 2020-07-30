@@ -22,6 +22,7 @@ App({
     projectcurrent2:0,           //用户修改自己项目时对项目在数组中位置进行标记定位，传递到编辑页面进行数据获取
     projectcurrent3:0,           //保存我的项目中的数组id，供教师查看项目中是否有人申请
     personcurrent1:0,           //保存审核用户的数组id，传递到具体信息界面进行数据获取
+    projectcurrent1:0,           //保存审核项目的数组id，传递到具体信息界面进行数据获取
     currentname:'',              //标记游客与已填写简历用户姓名
     currentposition:'',          //标记当前用户身份
     PersonalProfile:[],          //获取openid绑定个人简历信息传递到个人中心
@@ -30,7 +31,8 @@ App({
     ProjectProfile1:[],            //项目数据库内记录，传递整个条目内容到res
     // ProjectProfile2:[],           //根据用户openid获取其上传项目信息，进行传递
     applicantcurrent:'',           //获取申请者的openid
-    PersonToBeChecked:[]           //审核状态为false的用户信息存储数组
+    PersonToBeChecked:[],           //审核状态为false的用户信息存储数组
+    ProjectToBeChecked:[]           //审核状态为false的项目信息存储数组
 
   }
 })

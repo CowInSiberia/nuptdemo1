@@ -122,9 +122,50 @@ Page({
     })
   },
   examine:function(){
-    wx.navigateTo({
-      url: '../ExamineEntrance/ExamineEntrance',
-    })
+    if(getApp().globalData.currentposition == "管理员"){
+      wx.navigateTo({
+        url: '../ExamineEntrance/ExamineEntrance',
+      })
+    }else if(getApp().globalData.currentposition == "游客"){
+      wx.showToast({
+        icon: 'none',
+        title: '暂无权限进入'
+      })
+    }else if(getApp().globalData.currentposition == "学生"){
+      wx.showToast({
+        icon: 'none',
+        title: '暂无权限进入'
+      })
+    }else if(getApp().globalData.currentposition == "教师"){
+      wx.showToast({
+        icon: 'none',
+        title: '暂无权限进入'
+      })
+    }
+    
+  },
+  Censor:function(){
+    if(getApp().globalData.currentposition == "管理员"){
+      wx.navigateTo({
+        url: '../CensorProject/CensorProject',
+      })
+    }else if(getApp().globalData.currentposition == "游客"){
+      wx.showToast({
+        icon: 'none',
+        title: '暂无权限进入'
+      })
+    }else if(getApp().globalData.currentposition == "学生"){
+      wx.showToast({
+        icon: 'none',
+        title: '暂无权限进入'
+      })
+    }else if(getApp().globalData.currentposition == "教师"){
+      wx.showToast({
+        icon: 'none',
+        title: '暂无权限进入'
+      })
+    }
+    
   }
 
 

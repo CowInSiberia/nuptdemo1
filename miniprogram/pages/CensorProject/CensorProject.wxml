@@ -1,0 +1,7 @@
+<view wx:for="{{CheckProjectInfo}}" wx:for-item="CPI" class="uploader">
+  <image class = "icon" src="../../images/icon_file.png"></image>
+  <view class="uploader-text" bindtap="ViewProfile" id="{{index}}">
+    <text>{{CPI.ProjectName}}</text>
+  </view>    
+</view>
+

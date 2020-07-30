@@ -16,7 +16,11 @@ Page({
 
     wx.setNavigationBarTitle({
       title: '科研项目互选平台'
-    })
+    }
+    
+    )
+
+
 
     // 获取用户信息
     wx.getSetting({
@@ -35,9 +39,6 @@ Page({
       }
     })
   },
-  bindGetUserInfo (e) {
-    console.log(e.detail.userInfo)
-  },
 
   onGetUserInfo: function(e) {
     if (!this.data.logged && e.detail.userInfo) {
@@ -49,8 +50,16 @@ Page({
     }
   },
 
-  onGetOpenid: function() {
-    var that = this;
+  onGetOpenid: function(e) {
+    if (!this.data.logged && e.detail.userInfo) {
+      this.setData({
+        logged: true,
+        avatarUrl: e.detail.userInfo.avatarUrl,
+        userInfo: e.detail.userInfo
+      })
+    }
+    if(this.data.logged){
+      var that = this;
     
     // 调用云函数
     wx.cloud.callFunction({
@@ -65,6 +74,7 @@ Page({
         const db = wx.cloud.database()
         db.collection('PersonalProfile').where({
           _openid: that.data.useropen,
+          isChecked:true
         })
         .get({
           success: function(res) {
@@ -100,9 +110,9 @@ Page({
         console.error('[云函数] [login] 调用失败', err)
       }
     })  
-  },
 
-  limit:function(){
+    }
     
   },
+
 })

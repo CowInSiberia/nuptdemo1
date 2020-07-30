@@ -6,7 +6,7 @@ Page({
   onLoad: function(){
 
     wx.setNavigationBarTitle({
-      title: '审核大厅'
+      title: '用户审核大厅'
     })
 
     var that = this;

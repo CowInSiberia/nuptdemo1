@@ -115,7 +115,7 @@ Page({
     
   },
 
-  UploadProject:function(){
+  UploadProject:function(e){
     var that = this;
     this.setData({
       CollegeValue:this.data.college[this.data.k3]
@@ -158,6 +158,13 @@ Page({
       })
     }
     else{
+      wx.requestSubscribeMessage({
+        tmplIds: ['I16rb5U_mgrglaJq5Jj1jOP5tMD_O0n-HqJ4iY7xYFM'],    //这里填写你的模板ID
+        success:res=>{
+        },
+        fail:res=>{
+        }
+      })   
       const db = wx.cloud.database()
       db.collection('ProjectProfile').add({
         data: {
@@ -173,10 +180,9 @@ Page({
           fileID:that.data.filename
         },
         success: res => {
-          // 在返回结果中会包含新创建的记录的 _id
-          
-          wx.showToast({
-            title: '已上传',
+         
+          that.setData({
+            modalName: e.currentTarget.dataset.target,
           })
         },
         fail: err => {
@@ -188,5 +194,10 @@ Page({
       })
     }    
       
+  },
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
   },
 });
