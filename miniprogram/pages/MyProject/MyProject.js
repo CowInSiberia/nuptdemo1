@@ -5,8 +5,6 @@ Page({
   data: {
     ProjectNameTemp:[],
     position:false,
-    noapply:false,
-    applying:true
   },
   onLoad: function (options) {
 
@@ -82,18 +80,20 @@ Page({
     this.setData({
       applyid:thisproject.applyid
     })
-    
-    if(this.data.applyid){
-      getApp().globalData.applicantcurrent = this.data.applyid
-      wx.navigateTo({
-        url: '../Applicant/Applicant',
-      })
-    }else {
-      wx.showToast({
-        icon: 'none',
-        title: '目前暂无申请者申请'
-      })
-    }
+    wx.navigateTo({
+      url: '../ApplyInfo/ApplyInfo',
+    })
+    // if(this.data.applyid){
+    //   getApp().globalData.applicantcurrent = this.data.applyid
+    //   wx.navigateTo({
+    //     url: '../Applicant/Applicant',
+    //   })
+    // }else {
+    //   wx.showToast({
+    //     icon: 'none',
+    //     title: '目前暂无申请者申请'
+    //   })
+    // }
     
 
   },

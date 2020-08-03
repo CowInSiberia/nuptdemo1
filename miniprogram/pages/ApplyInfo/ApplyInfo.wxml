@@ -1,0 +1,6 @@
+ <view wx:for="{{ApplicantInfo}}" wx:for-item="AI" class="uploader">
+  <image class = "icon1" src="../../images/icon_file.png"></image>
+  <view class="uploader-text" bindtap="ApplicantDetails" id="{{index}}">
+    <text >{{AI.ApplicantName}}</text>
+  </view>
+</view>

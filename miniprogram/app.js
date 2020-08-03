@@ -30,7 +30,8 @@ App({
     projectID:'',                //我的项目onload中标记当前openid用户在项目数据库内记录，有则传递条目id无则标记为00
     ProjectProfile1:[],            //项目数据库内记录，传递整个条目内容到res
     // ProjectProfile2:[],           //根据用户openid获取其上传项目信息，进行传递
-    applicantcurrent:'',           //获取申请者的openid
+    applicantcurrent:'',           //applyinfo界面中保存申请用户的数组id，传递到具体信息界面进行数据获取
+    ApplicantInfo:'',               //applyinfo界面中保存申请该项目的申请信息，传递至具体信息界面
     PersonToBeChecked:[],           //审核状态为false的用户信息存储数组
     ProjectToBeChecked:[]           //审核状态为false的项目信息存储数组
 

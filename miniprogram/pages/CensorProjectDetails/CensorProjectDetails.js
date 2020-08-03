@@ -104,10 +104,10 @@ Page({
           },
         })
       },
-      fail:err=>{
-        
+      fail:err=>{    
       }
     })
+
   },
 
   hideModal(e) {

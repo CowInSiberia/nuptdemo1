@@ -10,9 +10,12 @@ Page({
       title: '申请者'
     })
 
+    var applicantid = getApp().globalData.applicantcurrent;
+    var applicantinfo = getApp().globalData.ApplicantInfo[applicantid];
+    
     var that = this;
     this.setData({
-      applyid: getApp().globalData.applicantcurrent
+      applyid: applicantinfo.ApplicantID
     })
     
     const db = wx.cloud.database()
@@ -40,7 +43,7 @@ Page({
     const db = wx.cloud.database()
     db.collection('ProjectProfile').doc(thisproject._id).update({
       data:{
-        status:2
+        status:'2'
       },
       success:res=>{
         that.setData({
