@@ -60,14 +60,16 @@ font-size: 40rpx;
   
   width: 50%;
   margin-top: 150rpx;
-  background-color: #ffffff;
-  color: white;
-  border: 1rpx solid #000000;
-  border-radius: 98rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 
+}
+.top{
+  margin-top:150rox;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 

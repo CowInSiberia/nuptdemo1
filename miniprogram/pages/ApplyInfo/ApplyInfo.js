@@ -12,7 +12,7 @@ Page({
       title: '申请列表'
     })
 
-    var projectid = getApp().globalData.projectcurrent2;
+    var projectid = getApp().globalData.projectcurrent3;
     var thisproject = getApp().globalData.ProjectProfile1[projectid];
     var that = this;
 

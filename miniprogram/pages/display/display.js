@@ -61,6 +61,7 @@ Page({
   },
 
   Apply:function(e){
+
     var that = this;
     if(this.data.UserPosition == "游客"){
       wx.showToast({
@@ -78,6 +79,15 @@ Page({
         title: '抱歉，管理员无法申请项目'
       })
     }else if(this.data.UserPosition == "学生"){
+
+      wx.requestSubscribeMessage({
+        tmplIds: ['I16rb5U_mgrglaJq5Jj1jOP5tMD_O0n-HqJ4iY7xYFM'],    //这里填写你的模板ID
+        success:res=>{
+        },
+        fail:res=>{
+        }
+      })   
+      
       const db = wx.cloud.database()
       db.collection('PersonalProfile').where({
         _openid:app.globalData.openid

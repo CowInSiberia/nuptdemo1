@@ -19,9 +19,7 @@ Page({
     }
     
     )
-
-
-
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -60,6 +58,10 @@ Page({
     }
     if(this.data.logged){
       var that = this;
+      // that.setData({
+      //   animation:e.currentTarget.dataset.class
+      // })
+      
     
     // 调用云函数
     wx.cloud.callFunction({
