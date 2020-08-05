@@ -12,13 +12,13 @@ exports.main = async (event, context) => {
         lang: 'zh_CN',
         data: {
           thing2: {
-            value: '您的申请已经通过'
+            value: event.censorword
           },
           name4: {
             value: event.username
           },
           thing7: {
-            value: event.censorword
+            value: event.content
           },
           time11: {
             value: event.currenttime

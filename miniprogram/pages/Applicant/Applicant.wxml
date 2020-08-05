@@ -54,14 +54,28 @@
   </view>
   
   
-  <button bindtap="Accept" class='button1' data-target="DialogModal1" >
+  <!-- <button bindtap="Accept" class='cu-btn lines-black round animation-fade text-center' style="margin-top:50rpx margin-bottom:80rpx" data-target="DialogModal1" >
     <image class = "icon2" src="../../images/icon_accept.png"></image>
     <text class="button1-text">同意</text>
   </button>
-  <button bindtap="Refuse" class='button2' >
+  <button bindtap="Refuse" class='cu-btn lines-black round animation-fade text-center' style="margin-top:50rpx margin-bottom:80rpx">
     <image class = "icon2" src="../../images/icon_refuse.png"></image>
     <text class="button1-text">拒绝</text>
-  </button>
+  </button> -->
+  <view class="grid col-2 padding-sm" style="margin-bottom:60rpx" >
+    <view bindtap="Accept" class="margin-tb-sm text-center" data-target="DialogModal1">
+      <button class="cu-btn lines-black sm round animation-fade text-center">
+        <image class = "icon2" src="../../images/icon_accept.png"></image>
+        <text class="button1-text">同意</text>
+      </button>
+    </view>
+    <view bindtap="Refuse" class="margin-tb-sm text-center" data-target="DialogModal2">
+      <button class="cu-btn lines-black sm round animation-fade text-center">
+        <image class = "icon2" src="../../images/icon_refuse.png"></image>
+        <text class="button1-text">拒绝</text>
+      </button>
+    </view>
+  </view>
 
   <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
     <view class="cu-dialog">
@@ -72,7 +86,23 @@
         </view>
       </view>
       <view class="padding-xl">
-        当前内容已审核完毕，通知已发送至该学生。
+        当前内容已审核完毕，同意通知已发送至该学生。
+      </view>
+      <view class="cu-bar bg-white justify-center">
+        <view class="action margin-0 flex-sub text-black solid-left" bindtap="hideModal">确定</view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-modal {{modalName=='DialogModal2'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">审核结果</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+        当前内容已审核完毕，拒绝通知已发送至该学生。
       </view>
       <view class="cu-bar bg-white justify-center">
         <view class="action margin-0 flex-sub text-black solid-left" bindtap="hideModal">确定</view>
@@ -81,3 +111,5 @@
   </view>
   
 </view>
+
+

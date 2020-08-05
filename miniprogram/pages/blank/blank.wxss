@@ -53,7 +53,7 @@ font-size: 40rpx;
 }
 .button1-text {
   
-  font-size: 34rpx;
+  font-size: 40rpx;
   color: #000000;
 }
 .button1{
@@ -66,10 +66,5 @@ font-size: 40rpx;
   justify-content: center;
 
 }
-.top{
-  margin-top:150rox;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
+
 

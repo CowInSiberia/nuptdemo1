@@ -1,81 +1,34 @@
-
-
-
-<view>
-  <view class="cu-timeline">
-    <view class="cu-time ">项目信息</view>
-    <view class="cu-item text-red">
-      <view class = "content bg-black shadow-blur">
-        <view class="cu-capsule radius">
-          <view class="cu-tag bg-red shadow">项目名称</view>
-        </view>
-        <view class="margin-top text-white">
-          {{ProjectName}}
-        </view>
-      </view>
-    </view>
-    <view class="cu-item text-red">
-      <view class = "content bg-black shadow-blur">
-        <view class="cu-capsule radius">
-          <view class="cu-tag bg-red shadow">项目方向</view>
-        </view>
-        <view class="margin-top text-white">
-          {{Direction}}
-        </view>
-      </view>
-    </view>
-    <view class="cu-item text-red">
-      <view class = "content bg-black shadow-blur">
-        <view class="cu-capsule radius">
-          <view class="cu-tag bg-red shadow">能力需求</view>
-        </view>
-        <view class="margin-top text-white">
-          {{Ability}}
-        </view>
-      </view>
-    </view>
-    <view class="cu-item text-red">
-      <view class = "content bg-black shadow-blur">
-        <view class="cu-capsule radius">
-          <view class="cu-tag bg-red shadow">项目介绍</view>
-        </view>
-        <view class="margin-top text-white">
-          {{Introduction}}
-        </view>
-      </view>
-    </view>
-    <view class="cu-item text-red">
-      <view class = "content bg-black shadow-blur">
-        <view class="cu-capsule radius">
-          <view class="cu-tag bg-red shadow">导师/课题组</view>
-        </view>
-        <view class="margin-top text-white">
-          {{ProfessorName}}
-        </view>
-      </view>
-    </view>
-    <view class="cu-item text-red">
-      <view class = "content bg-black shadow-blur">
-        <view class="cu-capsule radius">
-          <view class="cu-tag bg-red shadow">学院</view>
-        </view>
-        <view class="margin-top text-white">
-          {{College}}
-        </view>
-      </view>
-    </view>
-    <view class="cu-item text-red">
-      <view class = "content bg-black shadow-blur">
-        <view class="cu-capsule radius">
-          <view class="cu-tag bg-red shadow">联系方式</view>
-        </view>
-        <view class="margin-top text-white">
-          {{Email}}
-        </view>
-      </view>
-    </view>
+<!-- <form>
+  <view class="cu-form-group margin-top">
+    <view class="title">项目名称</view>
+    <input value="{{ProjectName}}"></input>
   </view>
-  
+  <view class="cu-form-group">
+    <view class="title">项目方向</view>
+    <input value="{{Direction}}"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">能力需求</view>
+    <input value="{{Ability}}"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">项目介绍</view>
+    <input value="{{Introduction}}"></input>
+  </view>
+
+  <view class="cu-form-group margin-top">
+    <view class="title">导师/课题组</view>
+    <input value="{{ProfessorName}}"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">学院</view>
+    <input value="{{College}}"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">联系方式</view>
+    <input value="{{Email}}"></input>
+  </view>
+
   <button class='button1'  bindtap="downloadAppendix" >
     <image class = "icon2" src="../../images/icon_appendix.png"></image>
     <text class="button1-text">查看附件</text>
@@ -101,6 +54,79 @@
       </view>
     </view>
   </view>
-  
-</view>
+</form> -->
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}" >
+  <view class="cu-list menu sm-border card-menu margin-top">
+    <view class="cu-item ">
+      <view class="content">
+        <text class="text-black">项目名称：      </text>
+        <text class="text-black">{{ProjectName}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top" >
+      <view class="content">
+        <text class="text-black">项目方向：      </text>
+        <text class="text-black">{{Direction}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black">能力需求：      </text>
+        <text class="text-black">{{Ability}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black">项目介绍：      </text>
+        <text class="text-black">{{Introduction}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black">导师/课题组：      </text>
+        <text class="text-black">{{ProfessorName}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black">学院：      </text>
+        <text class="text-black">{{College}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black">联系方式：      </text>
+        <text class="text-black">{{Email}}</text>
+      </view>
+    </view>
+  </view>
+
+  <button class='button1'  bindtap="downloadAppendix" >
+    <image class = "icon2" src="../../images/icon_appendix.png"></image>
+    <text class="button1-text">查看附件</text>
+  </button>
+  <button class='button2'  bindtap="Apply" data-target="DialogModal1">
+    <image class = "icon2" src="../../images/icon_apply.png"></image>
+    <text class="button1-text">申请加入</text>
+  </button>
+
+  <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">通知</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+        申请已提交，请等待导师回复。
+      </view>
+      <view class="cu-bar bg-white justify-center">
+        <view class="action margin-0 flex-sub text-black solid-left" bindtap="hideModal">确定</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+
 
