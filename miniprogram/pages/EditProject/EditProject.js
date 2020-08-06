@@ -201,7 +201,6 @@ Page({
           Direction: this.data.Direction,
           Requirement: this.data.Requirement,
           ProjectIntroduction: this.data.ProjectIntroduction,
-          status:"1",
           fileID:that.data.filename
         },
         success: res => {

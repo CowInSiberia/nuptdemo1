@@ -1,24 +1,43 @@
-
-  <view wx:for="{{ProjectNameTemp}}" wx:for-item="ProjectName" class="uploader">
-    <image class = "icon1" src="../../images/icon_file.png"></image>
-    <view class="uploader-text" bindtap="Revise" id="{{index}}">
-      <text >{{ProjectName.ProjectName}}</text>
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+  <view class="cu-bar bg-white solid-bottom margin-top" style="height:10Vh" wx:for="{{ProjectNameTemp}}" wx:for-item="ProjectName">
+    <view class="action" bindtap="Revise" id="{{index}}">
+      <text class="cuIcon-title text-orange "></text>
+      <text style="font-size:32rpx;width:60vw;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">{{ProjectName.ProjectName}}</text>
     </view>
-    <button class = "icon3" >
-      <!-- <image class = "icon4" src="../../images/icon_noapply.png" wx:if="{{!ProjectName.applyid}}" bindtap="ViewApplicant" id="{{index}}"></image>
-      <image class = "icon4" src="../../images/icon_applying.png" wx:if="{{ProjectName.applyid}}" bindtap="ViewApplicant" id="{{index}}"></image> -->
-      <image class = "icon4" src="../../images/icon_Applicant.png"  bindtap="ViewApplicant" id="{{index}}"></image>
+    <view class="action">
+      <button class="cu-btn bg-orange" bindtap="showMenuModal" id="{{index}}" data-target="menuModal" style="width:14vw;font-size:22rpx;">设置</button>
+    </view>
+  </view>
+  <view class="action" wx:if="{{position}}">
+    <button bindtap="Upload" class="cu-btn lines-black round lg animation-fade shadow text-center" style="width:40vw;margin-top:5Vh;margin-left:30vw;">
+      <text style="font-size:34rpx">上传</text>
     </button>
   </view>
 
-
-  <view wx:if="{{position}}">
-    <button bindtap="Upload" class="button1">
-      <text class = "button1-text">上传</text>
-    </button>
+  <view class="cu-modal {{modalName=='menuModal'?'show':''}}" bindtap="hideMenuModal">
+    <view class="cu-dialog" catchtap>
+      <scroll-view scroll-y style="height:300rpx">
+        <view class="cu-list menu text-left solid-top">
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">开放可见</text>
+            </view>
+            <view class="action">
+              <switch checked="{{visible}}" bindchange="OpenAccess"></switch>
+            </view>
+          </view>
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">申请者</text>
+            </view>
+            <view class="action">
+              <button class="cu-btn bg-grey lg shadow" bindtap="ViewApplicant" style="width:20vw;height:1Vh;font-size:30rpx;">查看</button>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
   </view>
+</scroll-view>
 
-
-
-   
 

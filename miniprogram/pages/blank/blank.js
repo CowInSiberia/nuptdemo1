@@ -58,9 +58,6 @@ Page({
     }
     if(this.data.logged){
       var that = this;
-      // that.setData({
-      //   animation:e.currentTarget.dataset.class
-      // })
       
     
     // 调用云函数
@@ -91,8 +88,8 @@ Page({
           
             //载入项目大厅            
             db.collection('ProjectProfile').where({
-              status:"1",
-              isChecked:true
+              isChecked:true,
+              visible:true
             })
             .get({
               success: function(res) {             

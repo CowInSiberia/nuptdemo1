@@ -3,7 +3,7 @@ var app = getApp();
 Page({
 
   data: {
-    
+    NooneApply:false
   },
 
   onLoad: function (options) {
@@ -32,6 +32,11 @@ Page({
           ApplicantInfo:res.data
         })
         getApp().globalData.ApplicantInfo = res.data
+        if(res.data == ""){
+          that.setData({
+            NooneApply:true
+          })
+        }
         
       }
     })

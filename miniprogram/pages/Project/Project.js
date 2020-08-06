@@ -10,19 +10,15 @@ Page({
     ProjectInformation:[],
   },
   onLoad: function (options) {
+    
     var ProjectInformation = getApp().globalData.ProjectInfo1;
-    // var projectname = [];
-    //   for(var k = 0; k < ProjectInformation.length; k++){
-    //     var PN = ProjectInformation[k].ProjectName
-    //     projectname.push(PN)
-    //   }
 
     this.setData({
       ProjectNameTemp: ProjectInformation
     })
     
     wx.setNavigationBarTitle({
-      title: '项目'
+      title: '项目大厅'
     })
   },
   

@@ -123,3 +123,7 @@ Day30，做完了申请功能，下午开组会，自我感觉还行，和腿捣
 Day31，完善了申请功能的拒绝模块，至此申请功能结束。为display界面更换了新的UI，list+card呈现。
 在腿的帮助下解决了子系统和docker的问题。准备开始学习docker和ubuntu操作。
 准备进行审核功能的拒绝模块，为审核功能的界面更换UI，研究按钮动作和grid布局。
+
+Day32，重做了我的项目模块，scroll-view+menucard+switch，弄清楚并在翻新过程中实操了style和class相关内容。
+并没有学习docker和ubuntu，看了学长发的无人机项目文档，简单了解了相关需求。
+准备进行汇报。

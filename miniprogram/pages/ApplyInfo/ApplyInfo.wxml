@@ -1,6 +1,19 @@
- <view wx:for="{{ApplicantInfo}}" wx:for-item="AI" class="uploader">
+ <!-- <view wx:for="{{ApplicantInfo}}" wx:for-item="AI" class="uploader">
   <image class = "icon1" src="../../images/icon_file.png"></image>
   <view class="uploader-text" bindtap="ApplicantDetails" id="{{index}}">
     <text >{{AI.ApplicantName}}</text>
   </view>
-</view>
+</view> -->
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+  <view class="cu-bar bg-white solid-bottom margin-top" style="height:10Vh" wx:for="{{ApplicantInfo}}" wx:for-item="AI">
+    <view class="action" bindtap="ApplicantDetails" id="{{index}}">
+      <text class="cuIcon-title text-orange "></text>
+      <text style="font-size:36rpx;width:60vw;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-left:5vw">{{AI.ApplicantName}}</text>
+    </view>
+  </view>
+  <view class="action" wx:if="{{NooneApply}}">
+    <button class="cu-btn lines-black animation-fade shadow text-center" style="width:40vw;height:25Vh;margin-top:25Vh;margin-left:30vw;">
+      <text style="font-size:40rpx">该项目目前暂时无人申请</text>
+    </button>
+  </view>
+</scroll-view>

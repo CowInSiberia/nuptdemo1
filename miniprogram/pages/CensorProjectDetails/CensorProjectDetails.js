@@ -81,7 +81,8 @@ Page({
     const db = wx.cloud.database()
     db.collection('ProjectProfile').doc(this.data.projectid).update({
       data:{
-        isChecked:true
+        isChecked:true,
+        visible:true
       },
       success:res=>{
         that.setData({

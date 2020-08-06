@@ -13,7 +13,6 @@ Page({
     const db = wx.cloud.database()
     db.collection('ProjectProfile').where({
       isChecked: false,
-      status:"1"
     })
     .get({
       success:function(res){

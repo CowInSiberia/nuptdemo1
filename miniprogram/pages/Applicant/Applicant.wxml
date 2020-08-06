@@ -1,4 +1,4 @@
-<view>
+<!-- <view>
   <view class="cu-timeline">
     <view class="cu-time ">申请学生</view>
     <view class="cu-item text-red">
@@ -52,25 +52,54 @@
       </view>
     </view>
   </view>
+
   
   
-  <!-- <button bindtap="Accept" class='cu-btn lines-black round animation-fade text-center' style="margin-top:50rpx margin-bottom:80rpx" data-target="DialogModal1" >
-    <image class = "icon2" src="../../images/icon_accept.png"></image>
-    <text class="button1-text">同意</text>
-  </button>
-  <button bindtap="Refuse" class='cu-btn lines-black round animation-fade text-center' style="margin-top:50rpx margin-bottom:80rpx">
-    <image class = "icon2" src="../../images/icon_refuse.png"></image>
-    <text class="button1-text">拒绝</text>
-  </button> -->
+</view> -->
+
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}" >
+  <view class="cu-list menu sm-border card-menu margin-top">
+    <view class="cu-item ">
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">姓名：      </text>
+        <text class="text-black">{{username}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top" >
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">学院：      </text>
+        <text class="text-black">{{college}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">科研能力：      </text>
+        <text class="text-black">{{ability}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">个人介绍：      </text>
+        <text class="text-black">{{selfevaluation}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">联系方式：      </text>
+        <text class="text-black">{{qqnumber}}</text>
+      </view>
+    </view>
+  </view>
+
   <view class="grid col-2 padding-sm" style="margin-bottom:60rpx" >
     <view bindtap="Accept" class="margin-tb-sm text-center" data-target="DialogModal1">
-      <button class="cu-btn lines-black sm round animation-fade text-center">
+      <button class="cu-btn lines-black round animation-fade text-center" style="margin-top:4vh;width:30vw">
         <image class = "icon2" src="../../images/icon_accept.png"></image>
         <text class="button1-text">同意</text>
       </button>
     </view>
     <view bindtap="Refuse" class="margin-tb-sm text-center" data-target="DialogModal2">
-      <button class="cu-btn lines-black sm round animation-fade text-center">
+      <button class="cu-btn lines-black round animation-fade text-center" style="margin-top:4vh;width:30vw">
         <image class = "icon2" src="../../images/icon_refuse.png"></image>
         <text class="button1-text">拒绝</text>
       </button>
@@ -109,7 +138,6 @@
       </view>
     </view>
   </view>
-  
-</view>
+</scroll-view>
 
 

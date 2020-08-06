@@ -59,43 +59,43 @@
   <view class="cu-list menu sm-border card-menu margin-top">
     <view class="cu-item ">
       <view class="content">
-        <text class="text-black">项目名称：      </text>
+        <text class="text-black" style="font-size:32rpx">项目名称：      </text>
         <text class="text-black">{{ProjectName}}</text>
       </view>
     </view>
     <view class="cu-item margin-top" >
       <view class="content">
-        <text class="text-black">项目方向：      </text>
+        <text class="text-black" style="font-size:32rpx">项目方向：      </text>
         <text class="text-black">{{Direction}}</text>
       </view>
     </view>
     <view class="cu-item margin-top">
       <view class="content">
-        <text class="text-black">能力需求：      </text>
+        <text class="text-black" style="font-size:32rpx">能力需求：      </text>
         <text class="text-black">{{Ability}}</text>
       </view>
     </view>
     <view class="cu-item margin-top">
       <view class="content">
-        <text class="text-black">项目介绍：      </text>
+        <text class="text-black" style="font-size:32rpx">项目介绍：      </text>
         <text class="text-black">{{Introduction}}</text>
       </view>
     </view>
     <view class="cu-item margin-top">
       <view class="content">
-        <text class="text-black">导师/课题组：      </text>
+        <text class="text-black" style="font-size:32rpx">导师/课题组：      </text>
         <text class="text-black">{{ProfessorName}}</text>
       </view>
     </view>
     <view class="cu-item margin-top">
       <view class="content">
-        <text class="text-black">学院：      </text>
+        <text class="text-black" style="font-size:32rpx">学院：      </text>
         <text class="text-black">{{College}}</text>
       </view>
     </view>
     <view class="cu-item margin-top">
       <view class="content">
-        <text class="text-black">联系方式：      </text>
+        <text class="text-black" style="font-size:32rpx">联系方式：      </text>
         <text class="text-black">{{Email}}</text>
       </view>
     </view>

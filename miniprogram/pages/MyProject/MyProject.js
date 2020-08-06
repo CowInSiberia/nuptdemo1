@@ -62,7 +62,64 @@ Page({
       }
     })
   },
-  
+  showMenuModal(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
+    getApp().globalData.projectcurrent3 = e.currentTarget.id
+    var thisproject = getApp().globalData.ProjectProfile1[e.currentTarget.id];
+    
+    if(thisproject.visible){
+      this.setData({
+        visible:true
+      })
+    }else{
+      this.setData({
+        visible:false
+      }
+      )
+    }
+  },
+
+  hideMenuModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
+
+  OpenAccess: function (e) {
+    var projectid = getApp().globalData.projectcurrent2;
+    var thisproject = getApp().globalData.ProjectProfile1[projectid];
+    
+    if(e.detail.value){
+      const db = wx.cloud.database()
+      db.collection('ProjectProfile').doc(thisproject._id).update({
+        data: {
+            visible:true
+        },
+        success: res => {
+        },
+        fail: err => {
+        }
+      })
+    }else if(!e.detail.value){
+      const db = wx.cloud.database()
+      db.collection('ProjectProfile').doc(thisproject._id).update({
+        data: {
+            visible:false
+        },
+        success: res => {
+        },
+        fail: err => {
+        }
+      })
+
+    }
+    
+    
+    
+  },
+
   Revise:function(e){
     getApp().globalData.projectcurrent2 = e.currentTarget.id
 
@@ -73,29 +130,11 @@ Page({
   },
 
   ViewApplicant:function(e){
-    getApp().globalData.projectcurrent3 = e.currentTarget.id
-    var projectid = getApp().globalData.projectcurrent3
-    var thisproject = getApp().globalData.ProjectProfile1[projectid];
-
-    this.setData({
-      applyid:thisproject.applyid
-    })
+    
+    
     wx.navigateTo({
       url: '../ApplyInfo/ApplyInfo',
     })
-    // if(this.data.applyid){
-    //   getApp().globalData.applicantcurrent = this.data.applyid
-    //   wx.navigateTo({
-    //     url: '../Applicant/Applicant',
-    //   })
-    // }else {
-    //   wx.showToast({
-    //     icon: 'none',
-    //     title: '目前暂无申请者申请'
-    //   })
-    // }
-    
-
   },
 
   

@@ -176,7 +176,7 @@ Page({
           Requirement: this.data.Requirement,
           ProjectIntroduction: this.data.ProjectIntroduction,
           isChecked: false,
-          status:"1",
+          visible:false,
           fileID:that.data.filename
         },
         success: res => {
