@@ -18,3 +18,7 @@
   font-size: 34rpx;
   color: #000000;
 }
+.icon2{
+  width:50rpx;
+  height:50rpx;
+}

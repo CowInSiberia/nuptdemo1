@@ -73,7 +73,8 @@ Page({
         const db = wx.cloud.database()
         db.collection('PersonalProfile').where({
           _openid: that.data.useropen,
-          isChecked:true
+          isChecked:true,
+          status:true
         })
         .get({
           success: function(res) {

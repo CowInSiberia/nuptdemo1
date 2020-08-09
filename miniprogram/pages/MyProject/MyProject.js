@@ -50,7 +50,7 @@ Page({
     const db = wx.cloud.database()
     db.collection('ProjectProfile').where({
       _openid: this.data.useropen,
-      isChecked:true
+      isChecked:true,
     })
     .get({
       success:function(res){        

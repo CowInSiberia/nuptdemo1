@@ -56,7 +56,7 @@
   </view>
 </form> -->
 <scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}" >
-  <view class="cu-list menu sm-border card-menu margin-top">
+  <view class="cu-list menu sm-border card-menu margin-top" style="margin-top:5vh">
     <view class="cu-item ">
       <view class="content">
         <text class="text-black" style="font-size:32rpx">项目名称：      </text>
@@ -101,14 +101,28 @@
     </view>
   </view>
 
-  <button class='button1'  bindtap="downloadAppendix" >
+  <!-- <button class='button1'  bindtap="downloadAppendix" >
     <image class = "icon2" src="../../images/icon_appendix.png"></image>
     <text class="button1-text">查看附件</text>
   </button>
   <button class='button2'  bindtap="Apply" data-target="DialogModal1">
     <image class = "icon2" src="../../images/icon_apply.png"></image>
     <text class="button1-text">申请加入</text>
-  </button>
+  </button> -->
+  <view class="grid col-2 padding-sm" style="margin-bottom:60rpx" >
+    <view bindtap="downloadAppendix" class="margin-tb-sm text-center">
+      <button class="cu-btn lines-black round animation-fade text-center" style="margin-top:4vh;width:40vw;height:6.5vh">
+        <image class = "icon2" src="../../images/icon_appendix.png"></image>
+        <text class="button1-text">查看附件</text>
+      </button>
+    </view>
+    <view bindtap="Apply" class="margin-tb-sm text-center" data-target="DialogModal1">
+      <button class="cu-btn lines-black round animation-fade text-center" style="margin-top:4vh;width:40vw;height:6.5vh">
+        <image class = "icon2" src="../../images/icon_apply.png"></image>
+        <text class="button1-text">申请加入</text>
+      </button>
+    </view>
+  </view>
 
   <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
     <view class="cu-dialog">

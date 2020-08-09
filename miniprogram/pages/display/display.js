@@ -6,6 +6,9 @@ Page({
   },
 
   onLoad: function() {
+    wx.setNavigationBarTitle({
+      title: '项目详情'
+    })
 
     var projectid = getApp().globalData.projectcurrent1;
     var test = getApp().globalData.ProjectInfo1[projectid];

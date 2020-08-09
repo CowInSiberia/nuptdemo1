@@ -189,7 +189,8 @@ Page({
             college: this.data.collegevalue,
             ability: this.data.ability,
             selfevaluation: this.data.selfevaluation,
-            isChecked:false
+            isChecked:false,
+            status:false
           },
           success: res => {
             
@@ -214,7 +215,8 @@ Page({
             college: this.data.collegevalue,
             ability: this.data.ability,
             selfevaluation: this.data.selfevaluation,
-            isChecked:false
+            isChecked:false,
+            status:false
           },
           success: res => {
             that.setData({

@@ -1,5 +1,4 @@
-
-<view>
+<!-- <view>
   <view class="cu-timeline">
     <view class="cu-time ">用户信息</view>
     <view class="cu-item text-red">
@@ -67,7 +66,7 @@
   <button bindtap="Grant" class="button1" data-target="DialogModal1">
     <text class = "button1-text">同意</text>
   </button>
-  <button bindtap="Refuse" class="button1">
+  <button bindtap="Refuse" class="button1" data-target="DialogModal1">
     <text class = "button1-text">拒绝</text>
   </button>
 
@@ -88,4 +87,99 @@
     </view>
   </view>
   
-</view>
+</view> -->
+
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}" >
+  <view class="cu-list menu sm-border card-menu margin-top">
+    <view class="cu-item ">
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">姓名：      </text>
+        <text class="text-black">{{username}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top" >
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">联系方式：      </text>
+        <text class="text-black">{{phonenumber}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top" >
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">QQ：      </text>
+        <text class="text-black">{{qqnumber}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">身份：      </text>
+        <text class="text-black">{{position}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">学院：      </text>
+        <text class="text-black">{{college}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">科研：      </text>
+        <text class="text-black">{{ability}}</text>
+      </view>
+    </view>
+    <view class="cu-item margin-top">
+      <view class="content">
+        <text class="text-black" style="font-size:32rpx">自我介绍：      </text>
+        <text class="text-black">{{Requirement}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="grid col-2 padding-sm" style="margin-bottom:60rpx" >
+    <view bindtap="Accept" class="margin-tb-sm text-center" data-target="DialogModal1">
+      <button class="cu-btn lines-black round animation-fade text-center" style="margin-top:4vh;width:30vw">
+        <image class = "icon2" src="../../images/icon_accept.png"></image>
+        <text class="button1-text">同意</text>
+      </button>
+    </view>
+    <view bindtap="Refuse" class="margin-tb-sm text-center" data-target="DialogModal2">
+      <button class="cu-btn lines-black round animation-fade text-center" style="margin-top:4vh;width:30vw">
+        <image class = "icon2" src="../../images/icon_refuse.png"></image>
+        <text class="button1-text">拒绝</text>
+      </button>
+    </view>
+  </view>
+
+  <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">审核结果</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+        当前内容已审核完毕，同意通知已发送至该用户。
+      </view>
+      <view class="cu-bar bg-white justify-center">
+        <view class="action margin-0 flex-sub text-black solid-left" bindtap="hideModal">确定</view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-modal {{modalName=='DialogModal2'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">审核结果</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+        当前内容已审核完毕，拒绝通知已发送至该用户。
+      </view>
+      <view class="cu-bar bg-white justify-center">
+        <view class="action margin-0 flex-sub text-black solid-left" bindtap="hideModal">确定</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

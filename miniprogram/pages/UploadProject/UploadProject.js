@@ -177,6 +177,7 @@ Page({
           ProjectIntroduction: this.data.ProjectIntroduction,
           isChecked: false,
           visible:false,
+          status:false,
           fileID:that.data.filename
         },
         success: res => {

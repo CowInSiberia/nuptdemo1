@@ -201,7 +201,10 @@ Page({
           Direction: this.data.Direction,
           Requirement: this.data.Requirement,
           ProjectIntroduction: this.data.ProjectIntroduction,
-          fileID:that.data.filename
+          fileID:that.data.filename,
+          isChecked:false,
+          visible:false,
+          status:false
         },
         success: res => {
           // 在返回结果中会包含新创建的记录的 _id

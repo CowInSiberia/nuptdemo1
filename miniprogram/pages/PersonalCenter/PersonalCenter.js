@@ -63,7 +63,9 @@ Page({
 
     var that = this;
     db.collection('ProjectProfile').where({
-      _openid: this.data.useropen
+      _openid: this.data.useropen,
+      isChecked:true,
+      status:true
       
     })
     .get({

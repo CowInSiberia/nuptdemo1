@@ -1,20 +1,16 @@
-.button1{
-  
-  width: 50%;
-  margin-top: 30rpx;
-  margin-bottom: 50rpx;
-  background-color: #ffffff;
-  color: white;
-  border: 1rpx solid #000000;
-  border-radius: 98rpx;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 
+.page {
+  height: 100Vh;
+  width: 100vw;
+  
 }
+
 .button1-text {
   
   font-size: 34rpx;
   color: #000000;
+}
+.icon2{
+  width:50rpx;
+  height:50rpx;
 }

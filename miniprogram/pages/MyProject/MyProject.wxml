@@ -34,6 +34,14 @@
               <button class="cu-btn bg-grey lg shadow" bindtap="ViewApplicant" style="width:20vw;height:1Vh;font-size:30rpx;">查看</button>
             </view>
           </view>
+          <!-- <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">项目</text>
+            </view>
+            <view class="action">
+              <button class="cu-btn bg-grey lg shadow"  style="width:20vw;height:1Vh;font-size:30rpx;">删除</button>
+            </view>
+          </view> -->
         </view>
       </scroll-view>
     </view>

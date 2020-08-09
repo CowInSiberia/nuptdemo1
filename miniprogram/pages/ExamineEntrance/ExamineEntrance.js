@@ -12,7 +12,8 @@ Page({
     var that = this;
     const db = wx.cloud.database()
     db.collection('PersonalProfile').where({
-      isChecked: false
+      isChecked: false,
+      status:false
     })
     .get({
       success:function(res){
