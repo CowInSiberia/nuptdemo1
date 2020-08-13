@@ -47,6 +47,7 @@ Page({
     //获取已填写项目信息
     //通过唯一openid连接数据库调取项目信息
 
+    var that = this;
     const db = wx.cloud.database()
     db.collection('ProjectProfile').where({
       _openid: this.data.useropen,
@@ -56,8 +57,14 @@ Page({
       success:function(res){        
         if(res.data.length == 0){
           getApp().globalData.projectID = "00"
+          that.setData({
+            ParticipateProject:true
+          })
         }else{
           getApp().globalData.projectID = res.data[0]._id
+          that.setData({
+            ParticipateProject:false
+          })
         }
       }
     })

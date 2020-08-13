@@ -1,4 +1,8 @@
-
+<view class="action" >
+    <button class="cu-btn lines-black animation-fade shadow text-center" style="width:40vw;height:10Vh;margin-top:10Vh;margin-left:30vw;">
+      <text style="font-size:40rpx">欢迎来到科研项目互选平台</text>
+    </button>
+  </view>
   
   <button 
     open-type="getUserInfo" 
@@ -9,7 +13,7 @@
   ></button>
 
 
-  <button class="cu-btn lines-black round lg animation-fade text-center" style="margin-top:150rpx" open-type="getUserInfo" bindgetuserinfo="onGetOpenid" >
+  <button class="cu-btn lines-black round lg animation-fade text-center" style="margin-top:20Vh" open-type="getUserInfo" bindgetuserinfo="onGetOpenid" >
     <text class = "button1-text">Hello</text>
   </button>
 

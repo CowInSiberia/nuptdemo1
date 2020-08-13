@@ -25,7 +25,7 @@ exports.main = async (event, context) => {
           }
         },
         templateId: 'I16rb5U_mgrglaJq5Jj1jOP5tMD_O0n-HqJ4iY7xYFM',
-        miniprogramState: 'developer'
+        miniprogramState: 'formal'
       })
     return result
   } catch (err) {

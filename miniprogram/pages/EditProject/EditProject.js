@@ -42,10 +42,6 @@ Page({
       this.setData({
         k4:4
       })
-    }else if(this.data.CollegeB=="海外教育学院"){
-      this.setData({
-        k4:5
-      })
     }
     
   },

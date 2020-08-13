@@ -26,7 +26,7 @@ Page({
 
   },
 
-  Grant:function(e){
+  Accept:function(e){
     var timestamp = Date.parse(new Date());
     timestamp = timestamp / 1000;
     //获取当前时间
@@ -63,7 +63,8 @@ Page({
             openid:this.data.openid,   //传入需要发送信息的用户openid
             username:this.data.username,
             currenttime:time,
-            censorword:"您的身份审核已通过"
+            censorword:"您的身份审核已通过",
+            content:"身份审核",
           },
           success:res=>{
             console.log(res)
@@ -115,7 +116,8 @@ Page({
             openid:this.data.openid,   //传入需要发送信息的用户openid
             username:this.data.username,
             currenttime:time,
-            censorword:"您的身份审核未通过"
+            censorword:"您的身份审核未通过",
+            content:"身份审核",
           },
           success:res=>{
             console.log(res)

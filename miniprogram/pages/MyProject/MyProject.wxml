@@ -8,11 +8,17 @@
       <button class="cu-btn bg-orange" bindtap="showMenuModal" id="{{index}}" data-target="menuModal" style="width:14vw;font-size:22rpx;">设置</button>
     </view>
   </view>
+  <view class="action" wx:if="{{ParticipateProject}}">
+    <button class="cu-btn lines-black animation-fade shadow text-center" style="width:40vw;height:25Vh;margin-top:25Vh;margin-left:30vw;">
+      <text style="font-size:40rpx">您目前暂时还没有创建/加入某一项目,或者上传项目正在审核中</text>
+    </button>
+  </view>
   <view class="action" wx:if="{{position}}">
     <button bindtap="Upload" class="cu-btn lines-black round lg animation-fade shadow text-center" style="width:40vw;margin-top:5Vh;margin-left:30vw;">
       <text style="font-size:34rpx">上传</text>
     </button>
   </view>
+  
 
   <view class="cu-modal {{modalName=='menuModal'?'show':''}}" bindtap="hideMenuModal">
     <view class="cu-dialog" catchtap>

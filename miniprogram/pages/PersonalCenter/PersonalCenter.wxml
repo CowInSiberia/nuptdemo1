@@ -25,14 +25,14 @@
       <text>我的项目</text>
     </view>
   </view>
-  <view class="uploader">
-    <image class = "icon" src="../../images/icon_file.png"></image>
+  <view class="uploader" wx:if="{{admin}}">
+    <image class = "icon" src="../../images/icon_censor.png"></image>
     <view class="uploader-text" bindtap="examine">
       <text>身份审核</text>
     </view>
   </view>
-  <view class="uploader">
-    <image class = "icon" src="../../images/icon_file.png"></image>
+  <view class="uploader" wx:if="{{admin}}">
+    <image class = "icon" src="../../images/icon_censor.png"></image>
     <view class="uploader-text" bindtap="Censor">
       <text>项目审核</text>
     </view>

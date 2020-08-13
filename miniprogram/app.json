@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/blank/blank",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -16,7 +17,6 @@
     "pages/Entrance/Entrance",
     "pages/PersonalCenter/PersonalCenter",
     "pages/Project/Project",
-    "pages/blank/blank",
     "pages/UploadProject/UploadProject",
     "pages/PersonalProfile/PersonalProfile",
     "pages/display/display",

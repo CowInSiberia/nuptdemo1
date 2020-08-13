@@ -2,7 +2,7 @@ Page({
   data: {
     position: ['学生', '教师'],
    
-    college:['计算机、软件、网络空间安全学院','通信与信息工程学院','物联网学院','理学院','外国语学院','海外教育学院'],
+    college:['计算机、软件、网络空间安全学院','通信与信息工程学院','物联网学院','理学院','外国语学院'],
     
     formerprofile:false
     
@@ -71,10 +71,6 @@ Page({
             that.setData({
               k2:4
             })
-          }else if(that.data.collegeA=="海外教育学院"){
-            that.setData({
-              k2:5
-            })
           }
         }
       })
@@ -125,8 +121,83 @@ Page({
     })
   },
 
+  test:function(e){
+    var that = this;
+
+    if(this.data.formerprofile){
+      if(!this.data.username){
+        this.setData({
+          username:that.data.usernameA
+        })
+      }else{
+        this.setData({
+          username:this.data.username
+        })
+      }
+      if(!this.data.college){
+        this.setData({
+          collegevalue:that.data.collegeA
+        })
+      }else{
+        this.setData({
+          collegevalue:this.data.college[this.data.k2]
+        })
+      }
+
+      console.log(this.data.username)
+      console.log(this.data.collegevalue)
+      
+    }else{
+      if(this.data.username == null){
+        wx.showToast({
+          icon: 'none',
+          title: '请输入姓名'
+        })
+      }else if(this.data.phonenumber == null){
+        wx.showToast({
+          icon: 'none',
+          title: '请输入手机号'
+        })
+      }else if(this.data.qqnumber == null){
+        wx.showToast({
+          icon: 'none',
+          title: '请输入QQ号'
+        })
+      }else if(this.data.positionvalue == null){
+        wx.showToast({
+          icon: 'none',
+          title: '请选择身份'
+        })
+      }else if(this.data.collegevalue == null){
+        wx.showToast({
+          icon: 'none',
+          title: '请选择所属学院'
+        })
+      }else if(this.data.ability == null){
+        wx.showToast({
+          icon: 'none',
+          title: '请填写自己掌握技能/研究方向'
+        })
+      }else if(this.data.selfevaluation == null){
+        wx.showToast({
+          icon: 'none',
+          title: '请填写自我评价/介绍'
+        })
+      }else{
+        wx.requestSubscribeMessage({
+          tmplIds: ['I16rb5U_mgrglaJq5Jj1jOP5tMD_O0n-HqJ4iY7xYFM'],    //这里填写你的模板ID
+          success:res=>{
+          },
+          fail:res=>{
+          }
+        })
+      }
+
+    }
+  },
+
   SaveIntro:function(e){
-    
+    var that = this;
     this.setData({
       positionvalue:this.data.position[this.data.k1],
       collegevalue:this.data.college[this.data.k2]

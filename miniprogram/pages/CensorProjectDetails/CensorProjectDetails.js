@@ -58,7 +58,7 @@ Page({
     }
   },
 
-  Grant:function(e){
+  Accept:function(e){
     var timestamp = Date.parse(new Date());
     timestamp = timestamp / 1000;
     //获取当前时间
@@ -97,7 +97,7 @@ Page({
             username:this.data.ProfessorName,
             currenttime:time,
             censorword:"您的项目审核已通过",
-            content:"项目审核"
+            content:"项目审核",
           },
           success:res=>{
             console.log(res)

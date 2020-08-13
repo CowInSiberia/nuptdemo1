@@ -7,7 +7,8 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    admin:false
   },
 
   onLoad: function(options) {
@@ -20,7 +21,14 @@ Page({
 
     wx.setNavigationBarTitle({
       title: '个人中心'
-    })    
+    })
+    if(getApp().globalData.currentposition == "管理员"){
+      this.setData({
+        admin:true
+      })
+    }else{
+      
+    }
 
     // 获取用户信息
     wx.getSetting({
@@ -39,6 +47,7 @@ Page({
         }
       }
     }),
+    
     
     this.setData({
       useropen:app.globalData.openid,
@@ -65,7 +74,6 @@ Page({
     db.collection('ProjectProfile').where({
       _openid: this.data.useropen,
       isChecked:true,
-      status:true
       
     })
     .get({
