@@ -5,6 +5,12 @@ Page({
     projecttemp:[],
     PN:[]
   },
+  onShareAppMessage: function () {
+    return {
+      title: '科研项目互选',
+      path: '/pages/blank/blank'
+    }
+  },
 
   onLoad: function() {
     if (!wx.cloud) {
@@ -16,9 +22,8 @@ Page({
 
     wx.setNavigationBarTitle({
       title: '科研项目互选平台'
-    }
-    
-    )
+    })
+
     
     // 获取用户信息
     wx.getSetting({

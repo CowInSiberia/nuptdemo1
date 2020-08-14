@@ -22,7 +22,7 @@ App({
     projectcurrent2:0,           //用户修改自己项目时对项目在数组中位置进行标记定位，传递到编辑页面进行数据获取
     projectcurrent3:0,           //保存我的项目中的数组id，供教师查看项目中是否有人申请
     personcurrent1:0,           //保存审核用户的数组id，传递到具体信息界面进行数据获取
-    projectcurrent1:0,           //保存审核项目的数组id，传递到具体信息界面进行数据获取
+    projectcurrent4:0,           //保存审核项目的数组id，传递到具体信息界面进行数据获取
     currentname:'',              //标记游客与已填写简历用户姓名
     currentposition:'',          //标记当前用户身份
     PersonalProfile:[],          //获取openid绑定个人简历信息传递到个人中心

@@ -69,6 +69,7 @@ Page({
       }
     })
   },
+
   showMenuModal(e) {
     this.setData({
       modalName: e.currentTarget.dataset.target
@@ -95,7 +96,7 @@ Page({
   },
 
   OpenAccess: function (e) {
-    var projectid = getApp().globalData.projectcurrent2;
+    var projectid = getApp().globalData.projectcurrent3;
     var thisproject = getApp().globalData.ProjectProfile1[projectid];
     
     if(e.detail.value){

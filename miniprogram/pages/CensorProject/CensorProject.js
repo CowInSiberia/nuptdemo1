@@ -25,7 +25,7 @@ Page({
   },
 
   ViewProfile:function(e){
-    getApp().globalData.projectcurrent1 = e.currentTarget.id
+    getApp().globalData.projectcurrent4 = e.currentTarget.id
     
     wx.navigateTo({
       url: '../CensorProjectDetails/CensorProjectDetails',

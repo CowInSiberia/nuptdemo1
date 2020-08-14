@@ -1,20 +1,20 @@
 <form>
   <view class="cu-form-group margin-top">
     <view class="title">项目名称</view>
-    <input value="{{ProjectNameB}}" placeholder="请输入项目名" type="text" bindblur="ProjectName" maxlength="20"></input>
+    <input value="{{ProjectNameB}}" placeholder="请输入项目名" type="text" bindinput="ProjectName" maxlength="20"></input>
   </view>
   <view class="cu-form-group">
     <view class="title">联系邮箱</view>
-    <input value="{{EmailNumberB}}" placeholder="请输入邮箱" type="text" bindblur="EmailNumber" maxlength="25"></input>
+    <input value="{{EmailNumberB}}" placeholder="请输入邮箱" type="text" bindinput="EmailNumber" maxlength="25"></input>
   </view>
   <view class="cu-form-group">
     <view class="title">导师/课题组</view>
-    <input value="{{ProfessorNameB}}" placeholder="请输入导师姓名" type="text" bindblur="ProfessorName" maxlength="12"></input>
+    <input value="{{ProfessorNameB}}" placeholder="请输入导师姓名" type="text" bindinput="ProfessorName" maxlength="12"></input>
   </view>
 
   <view class="cu-form-group margin-top">
     <view class="title">学院选择</view>
-    <picker bindchange="bindPickerChange4"  range="{{college}}">
+    <picker bindchange="bindPickerChange3"  range="{{college}}">
       <view class="picker">
           当前选择：{{college[k4]}}
       </view>
@@ -23,25 +23,42 @@
 
   <view class="cu-form-group margin-top">
     <view class="title">科研方向</view>
-    <textarea value="{{DirectionB}}" placeholder="请输入项目方向(最多20字)"  bindblur="Direction" maxlength="20"></textarea>
+    <textarea value="{{DirectionB}}" placeholder="请输入项目方向(最多20字)"  bindinput="Direction" maxlength="20"></textarea>
   </view>
   <view class="cu-form-group">
     <view class="title">招募要求</view>
-    <textarea value="{{RequirementB}}" placeholder="请输入申请要求(最多50字)"  bindblur="Requirement" maxlength="50"></textarea>
+    <textarea value="{{RequirementB}}" placeholder="请输入申请要求(最多50字)"  bindinput="Requirement" maxlength="50"></textarea>
   </view>
   <view class="cu-form-group">
     <view class="title">项目简介</view>
-    <textarea value="{{ProjectIntroductionB}}" placeholder="请输入项目简介(最多100字)"  bindblur="ProjectIntroduction" maxlength="100"></textarea>
+    <textarea value="{{ProjectIntroductionB}}" placeholder="请输入项目简介(最多100字)"  bindinput="ProjectIntroduction" maxlength="100"></textarea>
   </view>
 
   <button class='button1'  bindtap="UploadAppendix" >
     <image class = "icon2" src="../../images/icon_upload.png"></image>
     <text class="button1-text">上传附件</text>
   </button>
-  <button class='button2'  bindtap="SaveProject" >
+  <button class='button2'  bindtap="SaveProject" data-target="DialogModal1">
     <image class = "icon2" src="../../images/icon_save.png"></image>
     <text class="button1-text">保存</text>
   </button>
+
+  <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">项目内容</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+        您的项目已提交修改，目前状态不可见，请等待管理员审核。
+      </view>
+      <view class="cu-bar bg-white justify-center">
+        <view class="action margin-0 flex-sub text-black solid-left" bindtap="hideModal">确定</view>
+      </view>
+    </view>
+  </view>
 </form>
   
 

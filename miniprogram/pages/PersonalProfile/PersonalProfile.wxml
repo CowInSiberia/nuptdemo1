@@ -5,11 +5,11 @@
   </view>
   <view class="cu-form-group">
     <view class="title">联系电话</view>
-    <input value="{{phonenumberA}}" placeholder="请输入手机号" type="text" bindblur="phonenumber" maxlength="12"></input>
+    <input value="{{phonenumberA}}" placeholder="请输入手机号" type="text" bindinput="phonenumber" maxlength="12"></input>
   </view>
   <view class="cu-form-group">
     <view class="title">QQ</view>
-    <input value="{{qqnumberA}}" placeholder="请输入QQ号" type="text" bindblur="qqnumber" maxlength="15"></input>
+    <input value="{{qqnumberA}}" placeholder="请输入QQ号" type="text" bindinput="qqnumber" maxlength="15"></input>
   </view>
   <view class="cu-form-group margin-top">
     <view class="title">身份</view>
@@ -31,20 +31,16 @@
 
   <view class="cu-form-group margin-top">
     <view class="title">科研</view>
-    <textarea value="{{abilityA}}" placeholder="请输入自己掌握技能/研究方向(最多25字)"  bindblur="ability" maxlength="25"></textarea>
+    <textarea value="{{abilityA}}" placeholder="请输入自己掌握技能/研究方向(最多25字)"  bindinput="ability" maxlength="25"></textarea>
   </view>
   <view class="cu-form-group">
     <view class="title">个人陈述</view>
-    <textarea value="{{selfevaluationA}}" placeholder="请输入自我评价/简介(最多70字)"  bindblur="selfevaluation" maxlength="70"></textarea>
+    <textarea value="{{selfevaluationA}}" placeholder="请输入自我评价/简介(最多70字)"  bindinput="selfevaluation" maxlength="70"></textarea>
   </view>
 
   <button class='button1'  bindtap="SaveIntro" data-target="DialogModal1">
     <image class = "icon2" src="../../images/icon_save.png"></image>
-    <text class="button1-text" >提交</text>
-  </button>
-  <button class='button1'  bindtap="test" >
-    <image class = "icon2" src="../../images/icon_save.png"></image>
-    <text class="button1-text" >测试</text>
+    <text class="button1-text">提交</text>
   </button>
 
   <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
@@ -56,7 +52,7 @@
         </view>
       </view>
       <view class="padding-xl">
-        您的个人简历内容已提交，请等待管理员审核。
+        您的简历已修改，目前身份为游客，请等待管理员审核。
       </view>
       <view class="cu-bar bg-white justify-center">
         <view class="action margin-0 flex-sub text-black solid-left" bindtap="hideModal">确定</view>

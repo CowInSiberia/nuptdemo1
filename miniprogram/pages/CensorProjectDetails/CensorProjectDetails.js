@@ -8,7 +8,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '审核项目'
     })
-    var personid = getApp().globalData.projectcurrent1
+    var personid = getApp().globalData.projectcurrent4
     var thisproject = getApp().globalData.ProjectToBeChecked[personid]
     
     this.setData({

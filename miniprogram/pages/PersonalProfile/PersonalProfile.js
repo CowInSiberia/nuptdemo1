@@ -121,8 +121,13 @@ Page({
     })
   },
 
-  test:function(e){
+  SaveIntro:function(e){
     var that = this;
+
+    this.setData({
+      positionvalue:this.data.position[this.data.k1],
+      collegevalue:this.data.college[this.data.k2]
+    })
 
     if(this.data.formerprofile){
       if(!this.data.username){
@@ -133,8 +138,39 @@ Page({
         this.setData({
           username:this.data.username
         })
+      }      
+
+      if(!this.data.phonenumber){
+        this.setData({
+          phonenumber:that.data.phonenumberA
+        })
+      }else{
+        this.setData({
+          phonenumber:this.data.phonenumber
+        })
       }
-      if(!this.data.college){
+      
+      if(!this.data.qqnumber){
+        this.setData({
+          qqnumber:that.data.qqnumberA
+        })
+      }else{
+        this.setData({
+          qqnumber:this.data.qqnumber
+        })
+      }
+      
+      if(!this.data.positionvalue){
+        this.setData({
+          positionvalue:that.data.positionA
+        })
+      }else{
+        this.setData({
+          positionvalue:this.data.position[this.data.k1]
+        })
+      }
+
+      if(!this.data.collegevalue){
         this.setData({
           collegevalue:that.data.collegeA
         })
@@ -143,9 +179,61 @@ Page({
           collegevalue:this.data.college[this.data.k2]
         })
       }
+      
+      if(!this.data.ability){
+        this.setData({
+          ability:that.data.abilityA
+        })
+      }else{
+        this.setData({
+          ability:this.data.ability
+        })
+      }
+      
+      if(!this.data.selfevaluation){
+        this.setData({
+          selfevaluation:that.data.selfevaluationA
+        })
+      }else{
+        this.setData({
+          selfevaluation:this.data.selfevaluation
+        })
+      }
 
-      console.log(this.data.username)
-      console.log(this.data.collegevalue)
+
+      wx.requestSubscribeMessage({
+        tmplIds: ['I16rb5U_mgrglaJq5Jj1jOP5tMD_O0n-HqJ4iY7xYFM'],    //这里填写你的模板ID
+        success:res=>{
+        },
+        fail:res=>{
+        }
+      })
+
+      const db = wx.cloud.database()
+      db.collection('PersonalProfile').doc(getApp().globalData.profileID).update({
+        data: {
+          username: this.data.username,
+          phonenumber: this.data.phonenumber,
+          qqnumber: this.data.qqnumber,
+          position: this.data.positionvalue,
+          college: this.data.collegevalue,
+          ability: this.data.ability,
+          selfevaluation: this.data.selfevaluation,
+          isChecked:false,
+          status:false
+        },
+        success: res => {
+          that.setData({
+            modalName: e.currentTarget.dataset.target,
+          })
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '保存失败'
+          })
+        }
+      })
       
     }else{
       if(this.data.username == null){
@@ -191,92 +279,8 @@ Page({
           fail:res=>{
           }
         })
-      }
-
-    }
-  },
-
-  SaveIntro:function(e){
-    var that = this;
-    this.setData({
-      positionvalue:this.data.position[this.data.k1],
-      collegevalue:this.data.college[this.data.k2]
-    })
-    if(this.data.username == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请输入姓名'
-      })
-    }else if(this.data.phonenumber == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请输入手机号'
-      })
-    }else if(this.data.qqnumber == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请输入QQ号'
-      })
-    }else if(this.data.positionvalue == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请选择身份'
-      })
-    }else if(this.data.collegevalue == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请选择所属学院'
-      })
-    }else if(this.data.ability == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请填写自己掌握技能/研究方向'
-      })
-    }else if(this.data.selfevaluation == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请填写自我评价/介绍'
-      })
-    }else{
-      wx.requestSubscribeMessage({
-        tmplIds: ['I16rb5U_mgrglaJq5Jj1jOP5tMD_O0n-HqJ4iY7xYFM'],    //这里填写你的模板ID
-        success:res=>{
-        },
-        fail:res=>{
-        }
-      })   
-      var that = this;
-
-      const db = wx.cloud.database()
-      if(this.data.formerprofile){
-  
-        //更新数据
-        db.collection('PersonalProfile').doc(getApp().globalData.profileID).update({
-          data: {
-            username: this.data.username,
-            phonenumber: this.data.phonenumber,
-            qqnumber: this.data.qqnumber,
-            position: this.data.positionvalue,
-            college: this.data.collegevalue,
-            ability: this.data.ability,
-            selfevaluation: this.data.selfevaluation,
-            isChecked:false,
-            status:false
-          },
-          success: res => {
-            
-            that.setData({
-              modalName: e.currentTarget.dataset.target,
-            })
-          },
-          fail: err => {
-            wx.showToast({
-              icon: 'none',
-              title: '保存失败'
-            })
-          }
-        })
-      }else{
+        
+        const db = wx.cloud.database()
         db.collection('PersonalProfile').add({
           data: {
             username: this.data.username,
@@ -304,7 +308,6 @@ Page({
       }
 
     }
-       
   },
   
   hideModal(e) {

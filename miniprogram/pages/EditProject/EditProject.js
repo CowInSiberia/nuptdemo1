@@ -48,19 +48,19 @@ Page({
 
   ProjectName:function(event){
     this.setData({
-      ProjectName:event.detail.detail.value
+      ProjectName:event.detail.value
     })
   },
 
   EmailNumber:function(event){
     this.setData({
-      EmailNumber:event.detail.detail.value
+      EmailNumber:event.detail.value
     })
   },
 
   ProfessorName:function(event){
     this.setData({
-      ProfessorName:event.detail.detail.value
+      ProfessorName:event.detail.value
     })
   },
 
@@ -73,19 +73,19 @@ Page({
 
   Direction:function(event){
     this.setData({
-      Direction:event.detail.detail.value
+      Direction:event.detail.value
     })
   },
 
   Requirement:function(event){
     this.setData({
-      Requirement:event.detail.detail.value
+      Requirement:event.detail.value
     })
   },
 
   ProjectIntroduction:function(event){
     this.setData({
-      ProjectIntroduction:event.detail.detail.value
+      ProjectIntroduction:event.detail.value
     })
   },
 
@@ -135,9 +135,6 @@ Page({
                 title: '上传附件失败',
               })
             },
-            // complete: () => {
-            //   wx.hideLoading()
-            // }
           })
         }
       },   
@@ -150,42 +147,84 @@ Page({
       CollegeValue:this.data.college[this.data.k4]
     })
     
-    if(this.data.ProjectName == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请输入项目名称'
-      })
-    }else if(this.data.EmailNumber == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请输入联系邮箱'
-      })
-    }else if(this.data.ProfessorName == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请输入导师/课题组'
-      })
-    }else if(this.data.CollegeValue == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请选择所属学院'
-      })
-    }else if(this.data.Direction == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请填写科研方向'
-      })
-    }else if(this.data.Requirement == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请填写招募要求'
-      })
-    }else if(this.data.ProjectIntroduction == null){
-      wx.showToast({
-        icon: 'none',
-        title: '请填写项目简介'
+    if(!this.data.ProjectName){
+      this.setData({
+        ProjectName:this.data.ProjectNameB
       })
     }else{
+      this.setData({
+        ProjectName:this.data.ProjectName
+      })
+    }   
+    
+    if(!this.data.EmailNumber){
+      this.setData({
+        EmailNumber:this.data.EmailNumberB
+      })
+    }else{
+      this.setData({
+        EmailNumber:this.data.EmailNumber
+      })
+    }
+
+    if(!this.data.ProfessorName){
+      this.setData({
+        ProfessorName:this.data.ProfessorNameB
+      })
+    }else{
+      this.setData({
+        ProfessorName:this.data.ProfessorName
+      })
+    }
+    if(!this.data.CollegeValue){
+      this.setData({
+        CollegeValue:this.data.CollegeB
+      })
+    }else{
+      this.setData({
+        CollegeValue:this.data.CollegeValue
+      })
+    }
+
+    if(!this.data.Direction){
+      this.setData({
+        Direction:this.data.DirectionB
+      })
+    }else{
+      this.setData({
+        Direction:this.data.Direction
+      })
+    }
+
+    if(!this.data.Requirement){
+      this.setData({
+        Requirement:this.data.RequirementB
+      })
+    }else{
+      this.setData({
+        Requirement:this.data.Requirement
+      })
+    }
+
+    if(!this.data.ProjectIntroduction){
+      this.setData({
+        ProjectIntroduction:this.data.ProjectIntroductionB
+      })
+    }else{
+      this.setData({
+        ProjectIntroduction:this.data.ProjectIntroduction
+      })
+    }
+
+    wx.requestSubscribeMessage({
+      tmplIds: ['I16rb5U_mgrglaJq5Jj1jOP5tMD_O0n-HqJ4iY7xYFM'],    //这里填写你的模板ID
+      success:res=>{
+      },
+      fail:res=>{
+      }
+    })
+    
+    
       const db = wx.cloud.database()
       //更新数据
       db.collection('ProjectProfile').doc(this.data.projectid2).update({
@@ -217,7 +256,7 @@ Page({
         }
       })
       
-    } 
+    
   },
 
 
