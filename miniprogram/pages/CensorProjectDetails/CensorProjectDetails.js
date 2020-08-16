@@ -172,5 +172,8 @@ Page({
     this.setData({
       modalName: null
     })
+    wx.redirectTo({
+      url: '../CensorProject/CensorProject',
+    })
   },
 })
