@@ -9,15 +9,23 @@
       <view class="weui-search-bar__cancel-btn" bindtap="show">搜索</view>
   </view> -->
 
-  <view wx:for="{{ProjectNameTemp}}" wx:for-item="PN" class="uploader">
+  <!-- <view wx:for="{{ProjectNameTemp}}" wx:for-item="PN" class="uploader">
     <image class = "icon" src="../../images/icon_file.png"></image>
     <view class="uploader-text" bindtap="display" id="{{index}}">
       <text>{{PN.ProjectName}}</text>
     </view>
-    <!-- <view class="action">
-      <switch class="switch-sex sm" bindchange="switchSex"></switch>
-    </view> -->
+  </view> -->
+
+<view class="page-section-spacing">
+  <scroll-view scroll-y="true" style="height: 90vh;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view wx:for="{{ProjectNameTemp}}" wx:for-item="PN" class="uploader">
+    <image class = "icon" src="../../images/icon_file.png"></image>
+    <view class="uploader-text" bindtap="display" id="{{index}}">
+      <text>{{PN.ProjectName}}</text>
+    </view>
   </view>
+  </scroll-view>
+</view>
   
 
 

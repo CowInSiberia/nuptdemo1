@@ -14,7 +14,7 @@
     </button>
   </view>
   <view class="action" wx:if="{{position}}">
-    <button bindtap="Upload" class="cu-btn lines-black round lg animation-fade shadow text-center" style="width:40vw;margin-top:5Vh;margin-left:30vw;">
+    <button bindtap="Upload" class="cu-btn lines-black round lg animation-fade shadow text-center" style="width:40vw;margin-top:5Vh;margin-left:30vw;margin-bottom:5Vh">
       <text style="font-size:34rpx">上传</text>
     </button>
   </view>
