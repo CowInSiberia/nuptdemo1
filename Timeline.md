@@ -144,3 +144,5 @@ Day45，找不到GGFs传参的代码，CV相关内容的课没有去了解，ppt
 Day46，计划通过对test部分代码进行修改，断点后通过test指令print参数来找到参数传递路径。有条件和时间的话学习PyTorch的一些基本api。准备搬家。
 
 Day47，装了YOLOV5，完成了摄像头和图片测试，准备搬家。后续时间来得及的话可以尝试一下coco的训练和代码分析。
+
+Day48，下载coco128数据集，是打好标签的版本，进行训练，一开始不管如何修改batch_size都是报错cuda out of memory，通过修改general.py中的multi_label为False后可以用s版本的yml文件训练，暂时batch_size设置为16，准备进行后续的报告和ppt，有机会研究一下pdf的制作。
