@@ -146,3 +146,7 @@ Day46，计划通过对test部分代码进行修改，断点后通过test指令p
 Day47，装了YOLOV5，完成了摄像头和图片测试，准备搬家。后续时间来得及的话可以尝试一下coco的训练和代码分析。
 
 Day48，下载coco128数据集，是打好标签的版本，进行训练，一开始不管如何修改batch_size都是报错cuda out of memory，通过修改general.py中的multi_label为False后可以用s版本的yml文件训练，暂时batch_size设置为16，准备进行后续的报告和ppt，有机会研究一下pdf的制作。
+
+Day49，基本完成了YOLOv5的后续报告撰写，准备去学校报道，补充ppt。
+
+Day50，报道，学会了arma3的编辑器的基本操作，录屏后应该可以满足无人机项目的需求，准备补充v5的复现报告以及汇报ppt。
